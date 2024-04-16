@@ -78,7 +78,7 @@ function Membership() {
 
 
     return (
-        <div>
+        <div className='mt-[90px]'>
             <Script
             id="razorpay-checkout-js"
              src="https://checkout.razorpay.com/v1/checkout.js"></Script>

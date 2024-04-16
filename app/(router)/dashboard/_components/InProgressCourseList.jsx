@@ -12,7 +12,7 @@ function InProgressCourseList({userEnrolledCourses}) {
                 />
             ))
             :
-            [1,2,3,4,5].map((item,index)=>(
+            [1,2,3,4].map((item,index)=>(
               <div className='h-[200px] w-[230px] bg-slate-200 animate-pulse'></div>
             ))
           }

@@ -54,9 +54,8 @@ function Newsletter() {
   };
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-    <div className='pb-7  mb-7'><SocialNetworks/></div>
-       
+    <div className="mx-auto max-w-screen mb-[90px]-xl px-4 py-[150px] sm:px-6 lg:px-8">
+ 
 <WelcomebannerNewsletter/>
 
       <div className="mx-auto max-w-lg">
@@ -100,6 +99,8 @@ function Newsletter() {
             Join Now
           </button>
         </form>
+        <div className=' px-[180px] mt-7'><SocialNetworks/></div>
+       
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react'
 
 function BeInstructor() {
   return (
-    <div>BeInstructor</div>
+    <div className='mt-[90px]'>BeInstructor</div>
   )
 }
 

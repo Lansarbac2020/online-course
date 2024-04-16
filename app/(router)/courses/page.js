@@ -6,7 +6,7 @@ import SideBanner from './_components/SideBanner'
 
 function Courses() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 p-5 gap-5'>
+    <div className=' mt-[90px] grid grid-cols-1 md:grid-cols-4 p-5 gap-5'>
       {/* Left Container  */}
       <div className='col-span-3'>
           {/* Banner  */}

@@ -37,7 +37,7 @@ function WatchCourse({params}) {
 
 
   return courseInfo.name&&(
-    <div>
+    <div className='mt-[100px]'>
         <div className='grid grid-cols-1 md:grid-cols-3 p-5 gap-3'>
         {/* Title video description */}
         <div className='col-span-2 bg-white p-3'>

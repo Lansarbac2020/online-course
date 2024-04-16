@@ -43,7 +43,7 @@ function CoursePreview({params}) {
 
 
   return courseInfo&& (
-    <div className='grid grid-cols-1 md:grid-cols-3 p-5 gap-3'>
+    <div className='grid grid-cols-1 md:grid-cols-3 p-5 gap-3 mb-[90px]'>
         {/* Title video description */}
         <div className='col-span-2 bg-white p-3'>
 

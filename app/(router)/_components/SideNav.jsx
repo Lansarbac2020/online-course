@@ -69,7 +69,7 @@ function SideNav() {
 
   return (
     <div>
-      <nav className="w-full bg-white shadow-md text-black fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-white shadow-md text-primary fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -80,7 +80,7 @@ function SideNav() {
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button
-                  className="p-2 text-black rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-primary rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={toggleSidebar} // Toggle sidebar visibility when clicking the hamburger icon
                 >
                   {sidebarOpen ? (
@@ -106,7 +106,7 @@ function SideNav() {
                   item.auth && (
                     <Link href={item.path} key={item.id}>
                       <li
-                        className={`py-2 px-4 border rounded-md transition-all ease-in-out duration-200 cursor-pointer hover:animate-bounce hover:text-white ${path === item.path ? 'bg-blue-600 text-white' : 'bg-blue-300'}`}
+                        className={`py-2 px-4 border rounded-md transition-all ease-in-out duration-200 cursor-pointer hover:animate-bounce hover:text-white ${path === item.path ? 'bg-primary text-white' : 'bg-blue-300'}`}
                         onClick={() => {
                           toggleSidebar();
                           setActiveMenu(item.path); // Set active menu item

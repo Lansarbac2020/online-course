@@ -1,9 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import firebase from 'firebase/app';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push, orderByChild, equalTo, get } from 'firebase/database';
-import WelcomeBannerDashboard from '../dashboard/_components/WelcomeBannerDashboard';
+import { getDatabase, ref, push } from 'firebase/database';
 import WelcomebannerNewsletter from './_components/WelComeBannerNewsletter'
 import SocialNetworks from './_components/SocialNetworks'
 
@@ -54,7 +52,7 @@ function Newsletter() {
   };
 
   return (
-    <div className="mx-auto max-w-screen mb-[90px]-xl px-4 py-[150px] sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center justify-center py-[150px] mx-auto max-w-screen sm:px-6 lg:px-8 min-h-screen"> 
  
 <WelcomebannerNewsletter/>
 

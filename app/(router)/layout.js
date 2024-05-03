@@ -17,6 +17,7 @@ function layout({children}) {
             <Header/>
         {children}
         </div>
+       
         
          {/* <Footer/>        */}
 </div>

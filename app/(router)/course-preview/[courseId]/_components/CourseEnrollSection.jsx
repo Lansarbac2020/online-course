@@ -36,7 +36,7 @@ function CourseEnrollSection({courseInfo, isUserAlreadyEnrolled}) {
       })
     }
   return (
-    <div className='p-3 text-center rounded-sm bg-primary flex flex-col gap-3 mt-[100px]'>
+    <div className='p-3 text-center rounded-sm bg-primary flex flex-col gap-3 mt-[10px]'>
 
         <h2 className='text-[22px] font-bold  text-white'>Engistrez au cours</h2>
         {/* User has membership  */}

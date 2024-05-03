@@ -22,9 +22,14 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "/*": ["./node_modules/*"]
-    }
+      "@/*": [
+        "./*"
+      ],
+      "/*": [
+        "./node_modules/*"
+      ]
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",

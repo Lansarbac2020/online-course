@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { AiFillFacebook, AiOutlineTwitter, AiFillInstagram } from 'lucide-react';
 

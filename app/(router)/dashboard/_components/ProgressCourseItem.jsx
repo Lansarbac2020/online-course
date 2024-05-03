@@ -6,7 +6,6 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 function ProgressCourseItem({ course }) {
-  const [generateCertificate, setGenerateCertificate] = useState(false);
 
   const getTotalCompletedChapterPerc = (item) => {
     const totalChapters = item?.courseList?.chapter?.length || 0;
@@ -14,32 +13,6 @@ function ProgressCourseItem({ course }) {
     const perc = (completedChapters / totalChapters) * 100;
     // Limiter le pourcentage à 100% et s'assurer qu'il ne dépasse pas la valeur maximale
     return Math.min(perc, 100).toFixed(0);
-  }
-
-  const handleCertificateGeneration = async () => {
-    try {
-      const response = await fetch('/api/generateCertificate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          courseName: course.courseList.name,
-          userName: 'User Name', // Remplacez 'User Name' par le nom de l'utilisateur réel si disponible
-        }),
-      });
-
-      if (response.ok) {
-        // Téléchargement réussi, mettre à jour l'état pour afficher le téléchargement réussi
-        setGenerateCertificate(true);
-      } else {
-        // Gestion des erreurs de téléchargement
-        console.error('Failed to download certificate');
-      }
-    } catch (error) {
-      // Gestion des erreurs de requête
-      console.error('Error generating certificate:', error);
-    }
   }
 
   return (
@@ -65,15 +38,15 @@ function ProgressCourseItem({ course }) {
         {getTotalCompletedChapterPerc(course) === '100' && (
           <div className="flex justify-end p-2">
             {/* Utilisez un bouton ou un lien pour rendre l'icône de téléchargement cliquable */}
-            <Button className='text-primary hover:text-slate-400' onClick={handleCertificateGeneration}>
+            <Button className='text-primary hover:text-slate-400'>
               <Download className='text-white' />
             </Button>
           </div>
         )}
         {/* Afficher un message de réussite après le téléchargement du certificat */}
-        {generateCertificate && (
+        {/* {generateCertificate && (
           <div className="flex justify-end p-2 text-green-500">Certificate downloaded successfully</div>
-        )}
+        )} */}
       </div>
     </Link>
   )

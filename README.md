@@ -1,4 +1,4 @@
-# Online Course Platform (Under Development)
+# Online Courses Platform (Under Development)
 
 
 

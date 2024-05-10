@@ -72,7 +72,7 @@ function Footer() {
             {isDarkMode ? (
               <MoonIcon className="icon" size={20}/>
                 ):(
-            <SunIcon className="icon" size={20}/>
+            <SunIcon className="" size={20}/>
            )
         }
             </button>

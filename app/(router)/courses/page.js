@@ -3,6 +3,7 @@ import React from 'react'
 import WelcomeBanner from './_components/WelcomeBanner'
 import CourseList from './_components/CourseList'
 import SideBanner from './_components/SideBanner'
+import OurTeam from '../dashboard/_components/OurTeam'
 
 function Courses() {
   return (
@@ -19,6 +20,7 @@ function Courses() {
       <div className=' '>
         <SideBanner/>
       </div>
+      <div> <OurTeam/> </div>
     </div>
   )
 }

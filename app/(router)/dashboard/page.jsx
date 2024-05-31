@@ -2,6 +2,7 @@
 import { useUser } from '@clerk/nextjs'
 import React, { useEffect, useState } from 'react'
 import SideBanner from '../courses/_components/SideBanner';
+import OurTeam from '../dashboard/_components/OurTeam';
 import WelcomeBannerDashboard from './_components/WelcomeBannerDashboard';
 import InProgressCourseList from './_components/InProgressCourseList';
 import GlobalApi from '@/app/_utils/GlobalApi';
@@ -38,6 +39,7 @@ function Dashboard() {
       <div className=' '>
         <SideBanner/>
       </div>
+     
     </div>
     </div>
   )

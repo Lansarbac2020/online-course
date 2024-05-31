@@ -35,10 +35,10 @@ function Footer() {
                 <FooterList>
                     <h3 className="text-base font-bold 
                     mb-2">Customer Services </h3>
-                    <Link href="/contact" className="hover:text-white transition-shadow">Nous contacter</Link>
-                    <Link href="/shipping" className="hover:text-white transition-shadow">Devenir Enseignant</Link>
-                    <Link href="#" className="hover:text-white transition-shadow">Temoignages</Link>
-                    <Link href="#" className="hover:text-white transition-shadow">FAQs</Link>
+                    <Link href="/contact" className="hover:text-slate-500 transition-shadow">Nous contacter</Link>
+                    <Link href="/shipping" className="hover:text-slate-500  transition-shadow">Devenir Enseignant</Link>
+                    <Link href="#" className="hover:text-slate-500 transition-shadow">Temoignages</Link>
+                    <Link href="#" className="hover:text-slate-500 transition-shadow">FAQs</Link>
                 
                 </FooterList> 
                 <div className="w-full md:w-1/3 mb-6

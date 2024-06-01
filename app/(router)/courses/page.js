@@ -3,11 +3,12 @@ import React from 'react'
 import WelcomeBanner from './_components/WelcomeBanner'
 import CourseList from './_components/CourseList'
 import SideBanner from './_components/SideBanner'
-import OurTeam from '../dashboard/_components/OurTeam'
+import OurTeam from '../courses/_components/OurTeam'
 
 function Courses() {
   return (
-    <div className=' mt-[90px] grid grid-cols-1 md:grid-cols-4 p-5 gap-5'>
+    <div className='mt-[90px] '>
+      <div className=' grid grid-cols-3 md:grid-cols-4 p-5 gap-5'>
       {/* Left Container  */}
       <div className='col-span-3'>
           {/* Banner  */}
@@ -19,6 +20,7 @@ function Courses() {
       {/* Right Container */}
       <div className=' '>
         <SideBanner/>
+      </div>
       </div>
       <div> <OurTeam/> </div>
     </div>

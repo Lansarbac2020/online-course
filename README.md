@@ -1,7 +1,5 @@
 # Online Courses Platform (Under Development)
 
-
-
 ## Overview
 The Online Course Platform is a web-based learning management system designed to facilitate online education. It provides a platform for instructors to create and manage courses on programming and technology topics, and for students to enroll in and access course materials.
 
@@ -29,7 +27,6 @@ or others
 - **Version Control**: ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;
 - **Deployment**: [![Vercel](https://img.shields.io/badge/-Vercel-05122A?style=flat&logo=Vercel)](https://vercel.com/)
 
-
 ## usage
 Access the platform via the provided URL (default: https://lansarcenter-academy.vercel.app).
 
@@ -45,9 +42,18 @@ Contributions are welcome! As this project is in development, I'm open to contri
    ## Contact
 For any inquiries or support, you can contact me  [lansarbacoro@gmail.com](mailto:lansarbacoro@gmail.com).
 
-
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-
 ---
+<p align="center">
+  <img src="https://github.com/Lansarbac2020/online-course/assets/127045164/8d752367-158f-43ec-b318-90660be65132" alt="WhatsApp Image 2024-06-01 at 17 31 06" width="300" />
+  <img src="https://github.com/Lansarbac2020/online-course/assets/127045164/e2ae3f58-4eea-4c63-974f-fd59ebb8aa16" alt="WhatsApp Image 2024-06-01 at 17 31 07" width="300" />
+  <img src="https://github.com/Lansarbac2020/online-course/assets/127045164/1d4bb14a-bde4-4a4c-8185-542b8628f038" alt="WhatsApp Image 2024-06-01 at 17 31 08" width="300" />
+    <img src="https://github.com/Lansarbac2020/online-course/assets/127045164/7d075457-f2b7-4313-865b-d214e5dc1f45" alt="WhatsApp Image 2024-06-01 at 17 31 08" width="300" />
+
+ 
+
+</p>
+
+

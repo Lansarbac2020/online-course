@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import SideBanner from './SideBanner';
 
 function WelcomeBanner() {
   return (
@@ -12,6 +13,7 @@ function WelcomeBanner() {
         <h2 className='text-gray-500 text-sm md:text-base'>
           Explorez, apprenez et créez vos propres projets réels
         </h2>
+        
       </div>
     </div>
   );

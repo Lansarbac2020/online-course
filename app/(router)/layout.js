@@ -14,7 +14,7 @@ function layout({children}) {
           
         </div>
         <div className='md:ml-64'>
-            <Header/>
+            {/* <Header/> */}
         {children}
         </div>
        <Footer/>

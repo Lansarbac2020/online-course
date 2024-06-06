@@ -116,10 +116,10 @@ function SideNav() {
             <div className='flex items-center gap-4'>
       {/* <BellDot className='text-gray-500'/> */}
      
-        <div className='flex h-[55px] bg-white gap-1 border p-2 rounded-md'>
+        <div className='flex h-[50px]  bg-white gap-1 border p-2 rounded-md'>
             <Search className='h-9  w-5 text-black'/>
             <input type='text' placeholder='Search...' className='outline-none text-black'/>
-            <Button>Search</Button>
+            <div><button className='bg-primary p-3 rounded-md translate-x-3 mr-1 translate-y-[-7.5px]'>Search</button></div>
         </div> 
         {isLoaded&&user
       ? <UserButton afterSignOutUrl='/courses'/>

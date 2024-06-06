@@ -9,7 +9,7 @@ function Header() {
 
   const {user, isLoaded} = useUser();
   return (
-    <div className='p-4 float-right bg-white flex justify-between'>
+    <div className='p-4 float-right mt-8 bg-white flex justify-between'>
         {/* Search Bar */}
          <div className='flex gap-2 border p-2 rounded-md'>
             <Search className='h-5  w-5'/>

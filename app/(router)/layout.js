@@ -9,7 +9,7 @@ function layout({children}) {
   return (
     <div>
         <div className='md:w-64
-        md:block  fixed'>
+        md:block  sticky'>
             <SideNav/>
           
         </div>

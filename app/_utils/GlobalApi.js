@@ -238,6 +238,29 @@ const AddNewMember=async(email ,paymentId)=>{
 
 
 }
+// searchbar
+const SEARCH_COURSES_QUERY=async()=> {
+  const query=gql`
+  query SearchCourses($query: String!) {
+    courses(where: { name_contains: $query }) {
+      id
+      name
+      description
+      banner {
+        url
+      }
+      slug
+    }
+  }
+`
+
+  const result = await request(MASTER_URL, query);
+  return result
+
+
+}
+
+ 
 
 export default{
     getAllCourseList,
@@ -249,5 +272,6 @@ export default{
     markChapterCompleted,
     getUserAllEnrolledCourseList,
     AddNewMember,
+    SEARCH_COURSES_QUERY
 
 }

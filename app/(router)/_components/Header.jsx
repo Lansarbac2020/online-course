@@ -16,14 +16,7 @@ function Header() {
             <input type='text' placeholder='Search...' className='outline-none'/>
         </div> 
         {/* Get started and bell icon */}
-        <div className='flex items-center gap-4'>
-      <BellDot className='text-gray-500'/>
-      {isLoaded&&user
-      ? <UserButton afterSignOutUrl='/courses'/>
-      :
-      <Link href={'/sign-in'}>
-        <Button>Get Started</Button></Link>}
-        </div>
+     
 </div>
   )
 }

@@ -8,7 +8,7 @@ import OurTeam from '../courses/_components/OurTeam'
 function Courses() {
   return (
     <div className='mt-[90px]'>
-      <div className=' grid grid-cols-3 md:grid-cols-4 p-2 gap-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5 '>
       {/* Left Container  */}
       <div className='col-span-3'>
           {/* Banner  */}

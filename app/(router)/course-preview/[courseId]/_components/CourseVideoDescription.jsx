@@ -30,11 +30,16 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
         }
       </h2> 
 
-      <Markdown className='text-base font-light mt-2 leading-6'>
+      <Markdown className='text-base font-light mt-2 '>
         {watchMode ?
           courseInfo?.chapter[activeChapterIndex]?.shortDesc
           : courseInfo.description}
+   
       </Markdown>
+      <span>Author: </span>
+       <span className='mr-4 text-base font-bold leading-6'>
+        {courseInfo.author}
+      </span>
     </div>
   );
 }

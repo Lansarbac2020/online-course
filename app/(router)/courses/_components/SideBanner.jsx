@@ -1,3 +1,4 @@
+"use client"
 import GlobalApi from '@/app/_utils/GlobalApi'
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'

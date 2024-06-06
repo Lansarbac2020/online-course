@@ -35,10 +35,9 @@ function Dashboard() {
      <InProgressCourseList userEnrolledCourses={userEnrolledCourses}/>
       </div>
       {/* Right Container */}
-      <div className='col-span-1'>
+      <div className=' sm:mt-[170px] col-span-1'>
         <SideBanner/>
       </div>
-     
     </div>
     </div>
   )

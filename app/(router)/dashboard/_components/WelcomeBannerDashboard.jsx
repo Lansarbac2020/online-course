@@ -13,7 +13,7 @@ function WelcomeBannerDashboard({ user }) {
           <span className='font-bold text-primary'>{user?.fullName}</span>
         </h2>
         <h2 className='text-xs md:text-base font-light text-slate-500'>
-          Let's Begin Learning where you left off, <br />
+          Let's Begin Learning where you left off, <br/>
           Keep it up and improve your progress
         </h2>
       </div>

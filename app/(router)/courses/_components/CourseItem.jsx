@@ -23,7 +23,7 @@ function CourseItem({course}) {
                 width={20}
                 height={20}
                 />
-                <h2 className='text-[14px] text-gray-400'>Watnch On Youtube</h2>
+                <h2 className='text-[14px] text-gray-400'>Watch On Youtube</h2>
             </div>:
             <div className='flex gap-2'>
                 <Image src='/chapitre.png'

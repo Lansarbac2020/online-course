@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import clsx from 'clsx';
+import { Combobox } from '@headlessui/react';
 
 function SideNav() {
   const [sidebarOpen, setSidebarOpen] = useState(false); // State to manage sidebar visibility
@@ -117,6 +118,7 @@ function SideNav() {
               )}
             </ul>
             <div className="flex items-center gap-4">
+            
               <div className="flex h-[50px] bg-white gap-1 border p-2 rounded-md">
                 <Search className="h-9 w-5 text-black" />
                 <input type="text" placeholder="Search..." className="outline-none text-black" />
@@ -170,7 +172,7 @@ function SideNav() {
             )}
           </ul>
           <div className=" mt-9 grid gap-4">
-              <div className="flex  max-w-[250px] bg-white gap-1 border p-2 rounded-md">
+             <div className="flex  max-w-[250px] bg-white gap-1 border p-2 rounded-md">
                 <Search className="h-8 w-4 text-black" />
                 <input type="text" placeholder="Search..." className="outline-none max-w-[95px] text-black" />
                 <div>

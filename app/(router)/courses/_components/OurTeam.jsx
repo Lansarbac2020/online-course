@@ -5,23 +5,23 @@ import Link from 'next/link';
 
 const teamMembers = [
   { id: 1, name: 'Bacoro Lansar', position: 'PDG', photo: '/lansar.jpg', url: 'https://www.linkedin.com/in/johndoe' },
-  { id: 2, name: 'Jane Smith', position: 'CTO', photo: '/jane.jpg', url: 'https://www.linkedin.com/in/janesmith' },
-  { id: 3, name: 'Mike Johnson', position: 'CFO', photo: '/mike.jpg', url: 'https://www.linkedin.com/in/mikejohnson' },
-  { id: 4, name: 'Emily Davis', position: 'COO', photo: '/emily.jpg', url: 'https://www.linkedin.com/in/emilydavis' },
+  { id: 2, name: 'Jane Smith', position: 'Software Developper', photo: '/software.jpg', url: 'https://www.linkedin.com/in/janesmith' },
+  { id: 3, name: 'Mike Johnson', position: 'CFO', photo: '/mikejohnson.jpg', url: 'https://www.linkedin.com/in/mikejohnson'},
+  { id: 4, name: 'Emily Davis', position: 'Educator', photo: '/team21.jpg', url: 'https://www.linkedin.com/in/emilydavis' },
 ];
 
 function OurTeam() {
   return (
-    <div className="mt-5 p-3  translate-x-5 rounded-md bg-white py-10">
+    <div className="mt-5 p-3  translate-x-[2px] rounded-md bg-white py-10">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Notre Equipe</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum deserunt adipisci autem tenetur ullam rerum ipsa aperiam laboriosam harum quia quo porro corrupti inventore qui id voluptatem, voluptate sequi suscipit.</p>
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap gap-6 justify-center">
           {teamMembers.map(member => (
             <div key={member.id} className="flex flex-col items-center p-4 bg-gray-100 shadow-md rounded-md hover:cursor-pointer hover:shadow-lg transition-shadow duration-300">
-          
-                <div>
+          <div>
                   <Image
                     src={member.photo}
                     alt={member.name}

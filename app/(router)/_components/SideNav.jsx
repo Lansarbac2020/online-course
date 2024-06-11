@@ -154,7 +154,7 @@ function SideNav() {
                 item.auth && (
                   <Link href={item.path} key={item.id}>
                     <li
-                      className={`py-2 px-4 bg-primary transition-all ease-in-out duration-200 cursor-pointer  ${
+                      className={`py-2 px-4 bg-primary transition-all ease-in-out duration-200 cursor-pointer hover:text-slate-400  ${
                         path === item.path ? 'bg-slate-100 text-black' : 'text-white'
                       }`}
                       onClick={() => {

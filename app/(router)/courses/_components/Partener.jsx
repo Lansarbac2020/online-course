@@ -12,7 +12,7 @@ const partners = [
 
 function Partener() {
   return (
-    <div className="p-3 max-w-[1200px] translate-x-5 rounded-md bg-white py-10 p-5rounded-lg mt-3">
+    <div className="p-3 max-w-[1200px] translate-x-[2px] rounded-md bg-white py-10 p-5rounded-lg mt-3">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Nos Partenaires</h2>
       </div>

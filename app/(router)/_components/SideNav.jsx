@@ -31,7 +31,7 @@ function SideNav() {
     },
     {
       id: 1,
-      name: 'Tous les cours',
+      name: 'Home',
       icon: BookOpen,
       path: '/courses',
       auth: true,

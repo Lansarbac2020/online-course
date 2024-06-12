@@ -45,11 +45,15 @@ const BecomeTeacherForm = () => {
 
         emailjs.sendForm('service_krfcjal', 'template_dsn10kp', e.target, {publicKey:'3e0XDQPi9Ydh5g-qa'})
             .then((result) => {
-                console.log(result.text);
-                alert('Formulaire soumis avec succès');
+                //console.log(result.text);
+                toast.success("Le formulaire a ete envoye avec succes",{
+                    description:'Envoie du formulaire de contact'
+                   })
             }, (error) => {
-                console.log(error.text);
-                alert('Erreur lors de la soumission du formulaire');
+                //console.log(error.text);
+                toast.error("Le formulaire non envoye",{
+                    description:'Echec lors de l\'envoie formulaire'
+                   })
             });
     };
 

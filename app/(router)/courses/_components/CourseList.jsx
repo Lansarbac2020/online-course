@@ -57,7 +57,7 @@ function CourseList() {
           [1, 2, 3, 4, 5, 6, 7].map((item, index) => (
             <div
               key={index}
-              className='w-full h-[240px] rounded-xl m-2 bg-slate-200 animate-pulse'
+              className='w-full h-[240px] rounded-xl m-2 bg-slate-200 hover:scale-105 transform transition duration-300'
             ></div>
           ))
         )}

@@ -5,7 +5,9 @@ function CourseItem({course}) {
   return (
     <div className='border rounded-md
     hover:shadow-md 
-    hover:shadow-purple-300
+    hover:scale-105 
+    transform transition duration-300
+    hover:shadow-blue-300
     cursor-pointer'>
         <Image src={course?.banner?.url}
         width={500}

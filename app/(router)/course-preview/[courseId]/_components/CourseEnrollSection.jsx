@@ -18,7 +18,7 @@ function CourseEnrollSection({courseInfo, isUserAlreadyEnrolled}) {
      },[])
     const onEnrollCourse=()=>{
       GlobalApi.enrollToCourse(courseInfo?.slug, user?.primaryEmailAddress?.emailAddress).then(resp=>{
-        console.log(resp)
+        //console.log(resp)
 
         
         if(resp)

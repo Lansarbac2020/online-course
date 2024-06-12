@@ -1,13 +1,14 @@
 
 "use client"
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import WelcomeBanner from '../courses/_components/WelcomeBanner'
+import { toast } from 'sonner';
 
 function page() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
     // cv: null
 });
@@ -40,17 +41,20 @@ const handleSubmit = (e) => {
     const formDataToSend = new FormData();
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
-    formDataToSend.append('subject', formData.subject);
     formDataToSend.append('message', formData.message);
     // formDataToSend.append('cv', formData.cv);
 
     emailjs.sendForm('service_krfcjal', 'template_dsn10kp', e.target, {publicKey:'3e0XDQPi9Ydh5g-qa'})
         .then((result) => {
-            console.log(result.text);
-            alert('Formulaire soumis avec succès');
+            //console.log(result.text);
+           toast.success("Le formulaire a ete envoye avec succes",{
+            description:'Envoie du formulaire de contact'
+           })
         }, (error) => {
             console.log(error.text);
-            alert('Erreur lors de la soumission du formulaire');
+            toast.error("Le formulaire non envoye",{
+              description:'Echec lors de l\'envoie formulaire'
+             })
         });
 };
 

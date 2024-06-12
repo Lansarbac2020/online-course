@@ -15,12 +15,12 @@ function OurTeam() {
     <div className="mt-5 p-3  translate-x-[2px] rounded-md bg-white py-10">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Notre Equipe</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum deserunt adipisci autem tenetur ullam rerum ipsa aperiam laboriosam harum quia quo porro corrupti inventore qui id voluptatem, voluptate sequi suscipit.</p>
+        <p className='p-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum deserunt adipisci autem tenetur ullam rerum ipsa aperiam laboriosam harum quia quo porro corrupti inventore qui id voluptatem, voluptate sequi suscipit.</p>
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap gap-6 justify-center">
           {teamMembers.map(member => (
-            <div key={member.id} className="flex flex-col items-center p-4 bg-gray-100 shadow-md rounded-md hover:cursor-pointer hover:shadow-lg transition-shadow duration-300">
+            <div key={member.id} className="flex flex-col items-center p-4 hover:scale-105 transform transition duration-300 bg-gray-100 shadow-md rounded-md hover:cursor-pointer hover:shadow-lg">
           <div>
                   <Image
                     src={member.photo}

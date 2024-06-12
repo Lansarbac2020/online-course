@@ -38,7 +38,7 @@ function SideNav() {
     },
     {
       id: 2,
-      name: 'Store',
+      name: 'Blog',
       icon: StoreIcon,
       path: '/store',
       auth: true,

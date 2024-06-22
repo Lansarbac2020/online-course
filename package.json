@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.4",
     "@clerk/nextjs": "^4.29.11",
     "@emailjs/browser": "^4.3.3",
     "@headlessui/react": "^2.0.4",

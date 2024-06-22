@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import WelcomeBanner from '../courses/_components/WelcomeBanner'
 import { toast } from 'sonner';
+import Link from 'next/link';
+import { Instagram, LinkedinIcon, YoutubeIcon } from 'lucide-react';
 
 function page() {
   const [formData, setFormData] = useState({
@@ -59,10 +61,21 @@ const handleSubmit = (e) => {
 };
 
 return (
-    <div className="mt-[90px] max-w-md translate-x-[-200px] mx-auto bg-white p-8 border border-gray-300 rounded-lg shadow-lg">
+    <div className="mt-[90px] lg:translate-x-[-200px] mx-auto bg-white p-7 border border-gray-300 rounded-lg  lg:max-w-[700px] shadow-lg">
             
         <h2 className="text-2xl font-bold mb-6 text-center">Contact-Us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita reprehenderit voluptatum perspiciatis aut, velit reiciendis aliquid repellat commodi, ut dolore ab qui explicabo omnis mollitia optio corporis earum dolores hic!</p>
+                <div className='  gap-5'>
+                    <h2 className='float-left'>Veuillez remplir les champs ci-dessous pour nous contacter </h2>
+                    <div className='lg:flex  lg:translate-x-[100px] gap-2'>
+                    <Link href='#' className='hover:text-gray-500'><Instagram/></Link>
+                    <Link href='#'
+                    className='hover:text-gray-500'
+                    ><LinkedinIcon/></Link>
+                    <Link href='#'
+                    className='hover:text-gray-500'
+                    ><YoutubeIcon/></Link>
+                    </div>
+                        </div>
         <form onSubmit={handleSubmit} className="space-y-4">
             <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">

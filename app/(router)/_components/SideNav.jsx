@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+
 import { UserButton, useUser } from '@clerk/nextjs';
 import { BadgeCheck, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon } from 'lucide-react';
 import Image from 'next/image';
@@ -8,19 +9,22 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import clsx from 'clsx';
-import { Combobox } from '@headlessui/react';
+
+
 
 function SideNav() {
   const [sidebarOpen, setSidebarOpen] = useState(false); // State to manage sidebar visibility
   const { user, isLoaded } = useUser();
   const path = usePathname();
   const [activeMenu, setActiveMenu] = useState(null); // State to track active menu item
+ 
 
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  
   const menu = [
     {
       id: 8,
@@ -121,7 +125,7 @@ function SideNav() {
             
               <div className="flex h-[50px] bg-white gap-1 border p-2 rounded-md">
                 <Search className="h-9 w-5 text-black" />
-                <input type="text" placeholder="Search..." className="outline-none text-black" />
+                <input type="text" placeholder="Search our 100+ courses" className="outline-none text-black"/>
                 <div>
                   <button className="bg-primary p-3 rounded-md translate-x-3 mr-1 translate-y-[-7.5px]">
                     Search
@@ -136,6 +140,10 @@ function SideNav() {
                 </Link>
               )}
             </div>
+
+            {/* Afficher les résultats de la recherche */}
+      
+    
           </div>
         </div>
       </nav>

@@ -239,27 +239,24 @@ const AddNewMember=async(email ,paymentId)=>{
 
 }
 // searchbar
-const SEARCH_COURSES_QUERY=async()=> {
-  const query=gql`
-  query SearchCourses($query: String!) {
-    courses(where: { name_contains: $query }) {
-      id
-      name
-      description
-      banner {
-        url
+const SEARCH_COURSES = async (searchTerm) => {
+  const query = gql`
+    query SearchCourses($searchTerm: String!) {
+      searchCourses(query: $searchTerm) {
+        id
+        name
+        author
+        description
+        banner {
+          url
+        }
       }
-      slug
     }
-  }
-`
-
-  const result = await request(MASTER_URL, query);
-  return result
-
-
-}
-
+  `;
+  
+  const result = await request(MASTER_URL, query, { searchTerm });
+  return result;
+};
  
 
 export default{
@@ -272,6 +269,7 @@ export default{
     markChapterCompleted,
     getUserAllEnrolledCourseList,
     AddNewMember,
-    SEARCH_COURSES_QUERY
+    SEARCH_COURSES,
+    
 
 }

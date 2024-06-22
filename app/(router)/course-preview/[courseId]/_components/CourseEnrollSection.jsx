@@ -59,7 +59,7 @@ function CourseEnrollSection({courseInfo, isUserAlreadyEnrolled}) {
 
 <h2 className='text-white font-light'>Inscrivez-vous au package premimum afin d'acceder a tous nos cours</h2>
 
-<Link href='https://www.buymeacoffee.com/lansarbacoj'> <Button className='bg-white text-primary hover:bg-white hover:text-primary'>Premium $12</Button></Link>
+<Link href='https://www.buymeacoffee.com/lansarbacoj'> <Button className='bg-white text-primary hover:bg-white hover:text-primary'>Premium $35</Button></Link>
            
         </div>}
          {/* user does not have menbership or not signup/login */}

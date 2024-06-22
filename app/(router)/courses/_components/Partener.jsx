@@ -39,7 +39,7 @@ function Partner() {
         </button>
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide whitespace-nowrap scroll-smooth"
+          className="flex gap-6 overflow-x-hidden scrollbar-hide whitespace-nowrap scroll-smooth"
         >
           {partners.concat(partners).map((partner, index) => (
             <Link href={partner.url} key={index}>

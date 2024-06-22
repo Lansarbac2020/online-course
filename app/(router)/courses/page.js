@@ -17,11 +17,11 @@ function Courses() {
 
           {/* Course List  */}
             <CourseList/>
-           <OurTeam/> 
+           <OurTeam/>
       <Partener/>
       </div>
       {/* Right Container */}
-      <div className=' '>
+      <div className=''>
         <SideBanner/>
       </div>
       </div>

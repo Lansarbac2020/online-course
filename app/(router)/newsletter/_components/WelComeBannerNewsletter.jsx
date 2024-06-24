@@ -12,7 +12,7 @@ function WelComeBannerNewsletter() {
         className="mb-5"
       />
       <div className="text-center">
-        <h1 className="text-2xl font-bold text-blue-600 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           Rejoignez la NewsLetter maintenant
         </h1>
         <p className="mt-2 text-gray-500">

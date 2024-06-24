@@ -24,6 +24,7 @@ function CoursePreview({params}) {
 
   const getCourseInfoById = ()=>{
       GlobalApi.getCourseById(params?.courseId).then(resp=>{
+        console.log(resp);
         setCourseInfo(resp?.courseList)
        
       })

@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push } from 'firebase/database';
 import WelcomebannerNewsletter from './_components/WelComeBannerNewsletter'
 import SocialNetworks from './_components/SocialNetworks'
+import { LoaderCircle } from 'lucide-react';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAMlfahT-tPh0ciwPr8YJ2ydSlNexi1QZc",
@@ -22,8 +23,10 @@ const database = getDatabase(app);
 
 function Newsletter() {
   const [alertMessage, setAlertMessage] = useState('');
+  const [loading, setLoading]=useState(false);
 
   const handleJoinNow = async (event) => {
+    setLoading(true);
     event.preventDefault();
     const email = event.target.elements.email.value;
     const fullName = event.target.elements.fullName.value;
@@ -34,18 +37,20 @@ function Newsletter() {
       fullName
     });
 
+
     // Effacez les champs du formulaire après l'envoi
     event.target.elements.email.value = '';
     event.target.elements.fullName.value = '';
 
     setAlertMessage('Inscription réussie ! Merci de vous être inscrit à la newsletter.');
+    setLoading(false)
   };
 
   return (
     <div className="mt-[90px] p-5">
       <div className="md:flex md:gap-5">
         <div className="md:w-2/3 lg:w-3/4">
-          <WelcomebannerNewsletter />
+          <WelcomebannerNewsletter/>
         </div>
         <div className="mt-5 md:mt-0 md:w-1/3 lg:w-1/4">
           <form onSubmit={handleJoinNow} className="bg-white space-y-4 mr-3 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
@@ -79,9 +84,9 @@ function Newsletter() {
             </div>
             <button
               type="submit"
-              className="block w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white"
-            >
-              Join Now
+              className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+            >{loading? <LoaderCircle className='animate-spin'/>:
+              'Join Now'}
             </button>
           </form>
           <div className="mt-7 flex justify-center">

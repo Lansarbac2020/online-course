@@ -5,8 +5,7 @@ import emailjs from '@emailjs/browser'
 import WelcomeBanner from '../courses/_components/WelcomeBanner'
 import { toast } from 'sonner';
 import Link from 'next/link';
-import { Instagram, LinkedinIcon, YoutubeIcon } from 'lucide-react';
-
+import { Instagram, LinkedinIcon, MailIcon, YoutubeIcon } from 'lucide-react';
 function page() {
   const [formData, setFormData] = useState({
     name: '',
@@ -67,12 +66,12 @@ return (
                 <div className='  gap-5'>
                     <h2 className='float-left'>Veuillez remplir les champs ci-dessous pour nous contacter </h2>
                     <div className='lg:flex  lg:translate-x-[100px] gap-2'>
-                    <Link href='#' className='hover:text-gray-500'><Instagram/></Link>
+                    <Link href='mailto:lansarbacoro@gmail.com' className='text-gray-500 hover:text-primary hover:scale-105'><MailIcon/></Link>
                     <Link href='#'
-                    className='hover:text-gray-500'
+                    className='text-gray-500 hover:text-primary hover:scale-105'
                     ><LinkedinIcon/></Link>
                     <Link href='#'
-                    className='hover:text-gray-500'
+                    className='text-gray-500 hover:text-primary hover:scale-105'
                     ><YoutubeIcon/></Link>
                     </div>
                         </div>

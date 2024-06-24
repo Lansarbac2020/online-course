@@ -71,6 +71,7 @@ const getCourseById=async(courseId)=>{
         }
       }
       demoUrl
+      sourceCode
       description
       free
       name

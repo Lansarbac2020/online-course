@@ -110,7 +110,7 @@ function SideNav() {
                     <Link href={item.path} key={item.id}>
                       <li
                         className={clsx(
-                          'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer hover:animate-bounce hover:text-slate-300',
+                          'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer font-bold uppercase hover:text-slate-300 hover:scale-105',
                           path === item.path ? 'bg-primary border-b-2 text-white' : 'text-white'
                         )}
                         onClick={() => setActiveMenu(item.path)} // Set active menu item

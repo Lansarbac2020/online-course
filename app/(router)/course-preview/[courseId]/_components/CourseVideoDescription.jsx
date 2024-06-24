@@ -3,6 +3,8 @@ import VideoPlayer from './VideoPlayer';
 import Markdown from 'react-markdown';
 import { Button } from '@/components/ui/button';
 import { Item } from '@radix-ui/react-select';
+import { Code, LucideTrophy, RadioTower, Youtube, YoutubeIcon } from 'lucide-react';
+import Link from 'next/link';
 
 function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = false, setChapterCompleted }) {
   // Check if courseInfo exists before accessing its properties
@@ -40,6 +42,40 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
        <span className='mr-4 text-base font-bold leading-6'>
         {courseInfo.author}
       </span>
+      <div className='
+        bg-white mt-5 font-bold'>
+          Course Materials: 
+          <span className=' ml-2 text-sm text-slate-500 justify-eve'>Retrouver ci-dessous les materiels du cours</span>
+          <div className='flex gap-1 justify-center
+          lg:justify-between mt-5'>
+         {courseInfo?.demoUrl ? (
+        <Link href={courseInfo.demoUrl}>
+          <Button className='hover:scale-105 cursor-pointer gap-2'>
+            <RadioTower className='' /> Demo Url
+          </Button>
+        </Link>
+      ) : (
+        <Button className='hover:scale-105 cursor-not-allowed gap-2' disabled>
+          <RadioTower className='' /> Demo Url not available
+        </Button>
+      )}
+             {courseInfo?.sourceCode? (
+        <Link href={courseInfo.sourceCode}>
+          <Button className='hover:scale-105 cursor-pointer gap-2'>
+            <Code className='' /> Source code
+          </Button>
+        </Link>
+      ) : (
+        <>
+          
+        </>
+      )}
+         
+   
+         
+         
+          </div>
+        </div>
     </div>
   );
 }

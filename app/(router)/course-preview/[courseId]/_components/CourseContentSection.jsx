@@ -34,6 +34,7 @@ const checkisChapterCompleted=(chapterId)=>{
                 </h2>
             </div>
         ))}
+        
     </div>
   )
 }

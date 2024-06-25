@@ -5,6 +5,7 @@ import CourseList from './_components/CourseList'
 import SideBanner from './_components/SideBanner'
 import OurTeam from '../courses/_components/OurTeam'
 import Partener from '../courses/_components/Partener'
+import Testimonials from '../testimonial/page'
 
 function Courses() {
   return (
@@ -19,6 +20,7 @@ function Courses() {
             <CourseList/>
            <OurTeam/>
       <Partener/>
+      <Testimonials/>
       </div>
       {/* Right Container */}
       <div className=''>

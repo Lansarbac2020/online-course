@@ -50,9 +50,9 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
           lg:justify-between mt-5'>
          {courseInfo?.demoUrl ? (
         <Link href={courseInfo.demoUrl}>
-          <Button className='hover:scale-105 cursor-pointer gap-2'>
-            <RadioTower className='' /> Demo Url
-          </Button>
+          <>
+            
+          </>
         </Link>
       ) : (
         <Button className='hover:scale-105 cursor-not-allowed gap-2' disabled>

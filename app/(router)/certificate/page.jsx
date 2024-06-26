@@ -12,7 +12,7 @@ const [userEnrolledCourses, setUserEnrolledCourses] = useState([]);
     <div className="min-h-screen flex items-center justify-center bg-gray-200 p-4">
       <Certificate
         
-        userEnrolledCourses={userEnrolledCourses[0]}
+         userEnrolledCourses='Introduction a la programmation c++'
         user={user}
         credentialNumber="123456789"
         signerName="params"

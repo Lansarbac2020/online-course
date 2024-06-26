@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import mylogo from '../public/mylogo.jpg';
+import GlobalApi from '@/app/_utils/GlobalApi';
 
 const Certificate = ({ userEnrolledCourses, user, credentialNumber }) => {
   const currentDate = new Date().toLocaleDateString();
+  const [courses,setCoursesList]=useState([]);
 
   return (
     <div className=" mt-[90px] w-a4-landscape-width h-a4-landscape-height mx-auto p-10 border-4 border-gray-800 shadow-lg bg-white flex flex-col justify-between">

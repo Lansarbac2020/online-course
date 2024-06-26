@@ -17,7 +17,7 @@ const Certificate = ({ courseName, studentName, credentialNumber }) => {
         <div className="w-24"></div>
       </div>
       <div className="text-center">
-        <p className="text-xl text-gray-700 mb-2">Ce certificat est décerné à</p>
+        <p className="text-xl text-gray-700 mb-2 uppercase">Ce certificat est décerné à</p>
         <h2 className="text-4xl font-semibold text-primary mb-4">{studentName}</h2>
         <p className="text-xl text-gray-700 mb-2">pour avoir complété avec succès le cours</p>
         <h3 className="text-3xl italic text-primary mb-8">{courseName}</h3>

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import mylogo from '../public/mylogo.jpg';
 
-const Certificate = ({ courseName, studentName, credentialNumber }) => {
+const Certificate = ({ userEnrolledCourses, user, credentialNumber }) => {
   const currentDate = new Date().toLocaleDateString();
 
   return (
@@ -18,9 +18,9 @@ const Certificate = ({ courseName, studentName, credentialNumber }) => {
       </div>
       <div className="text-center">
         <p className="text-xl text-gray-700 mb-2 uppercase">Ce certificat est décerné à</p>
-        <h2 className="text-4xl font-semibold text-primary mb-4">{studentName}</h2>
+        <h2 className="text-4xl font-semibold text-primary mb-4">{user?.fullName}</h2>
         <p className="text-xl text-gray-700 mb-2">pour avoir complété avec succès le cours</p>
-        <h3 className="text-3xl italic text-primary mb-8">{courseName}</h3>
+        <h3 className="text-3xl italic text-primary mb-8">{userEnrolledCourses}</h3>
       </div>
       <div className="flex justify-between items-center mt-8">
         <div>

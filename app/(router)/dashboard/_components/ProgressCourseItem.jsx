@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
-import { Download } from 'lucide-react'
+import { Download, EyeIcon, ViewIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -16,8 +16,8 @@ function ProgressCourseItem({ course }) {
   }
 
   return (
-    <Link href={'/course-preview/' + course?.courseList?.slug}>
-      <div className='border rounded-md hover:shadow-md hover:shadow-purple-300 cursor-pointer'>
+    
+      <div className='border rounded-md'>
         <Image src={course.courseList?.banner?.url}
           width={500}
           height={150}
@@ -35,20 +35,31 @@ function ProgressCourseItem({ course }) {
           <Progress value={getTotalCompletedChapterPerc(course)} className="h-[7px]" />
         </div>
         {/* Afficher l'icône de téléchargement si le progrès du cours est de 100% */}
-        {getTotalCompletedChapterPerc(course) === '100' && (
-          <div className="flex justify-end p-2">
-            {/* Utilisez un bouton ou un lien pour rendre l'icône de téléchargement cliquable */}
-            <Button className='text-primary hover:text-slate-400'>
-              <Download className='text-white' />
+      
+       
+          <div className="flex justify-between p-2">
+          {getTotalCompletedChapterPerc(course) === '100' && (
+            <Link href={'/certificate/'}>
+            <Button className='text-white
+             hover:scale-105 '>
+              Get Certificate<Download className=' ml-3 text-white' />
             </Button>
+            </Link>
+            )}
+            {/* view button */}
+            <Link href={'/course-preview/' + course?.courseList?.slug}>
+            <Button className=' flex 
+            hover:scale-105
+            justify-start text-white '>
+               Watch <EyeIcon className='ml-3 text-white' />
+            </Button>
+            </Link>
+          
           </div>
-        )}
-        {/* Afficher un message de réussite après le téléchargement du certificat */}
-        {/* {generateCertificate && (
-          <div className="flex justify-end p-2 text-green-500">Certificate downloaded successfully</div>
-        )} */}
+        
+     
       </div>
-    </Link>
+    
   )
 }
 

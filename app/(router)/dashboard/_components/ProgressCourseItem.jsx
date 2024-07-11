@@ -42,13 +42,13 @@ function ProgressCourseItem({ course }) {
             <Link href={'/certificate/'}>
             <Button className='text-white
              hover:scale-105 '>
-              Get Certificate<Download className=' ml-3 text-white' />
-            </Button>
+              Certificate<Download className=' ml-3 text-white' />
+            </Button> 
             </Link>
             )}
             {/* view button */}
-            <Link href={'/course-preview/' + course?.courseList?.slug}>
-            <Button className=' flex 
+            <Link href={'/course-preview/'+course?.courseList?.slug}>
+            <Button className=' flex
             hover:scale-105
             justify-start text-white '>
                Watch <EyeIcon className='ml-3 text-white' />

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 
-import { UserButton, useUser } from '@clerk/nextjs';
+import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
 import { BadgeCheck, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,6 +9,11 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import clsx from 'clsx';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 
 
@@ -133,7 +138,20 @@ function SideNav() {
                 </div>
               </div>
               {isLoaded && user ? (
-                <UserButton afterSignOutUrl="/courses"/>
+
+<Popover>
+<PopoverTrigger> <Image src={user?.imageUrl} height={35} width={35} alt='profile image' className='rounded-full'/></PopoverTrigger>
+<PopoverContent className='w-44'>
+ <ul className='flex flex-col gap-2'>
+
+<Link href='/certificate' className='cursor-pointer hover:text-primary'>My Certificates</Link>
+<div href='/' className='cursor-pointer hover:text-primary'><SignOutButton/></div>
+ </ul></PopoverContent>
+</Popover>
+                // <div className='bg-white'>
+                //   <UserButton afterSignOutUrl="/courses"/>
+                //   </div>
+                
               ) : (
                 <Link href="/sign-in">
                   <div className="border p-2 rounded-md bg-blue-700">Get Started</div>

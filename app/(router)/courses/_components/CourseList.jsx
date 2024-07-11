@@ -39,7 +39,7 @@ function CourseList() {
           <SelectContent>
             <SelectItem value='light'>All</SelectItem>
             <SelectItem value='dark'>Paid</SelectItem>
-            <SelectItem value='system'>Free</SelectItem>
+             <SelectItem value='system'>Free</SelectItem>
           </SelectContent>
         </Select>
       </div>

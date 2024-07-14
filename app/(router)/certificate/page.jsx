@@ -1,10 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-
 import { useUser } from '@clerk/nextjs';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import Certificate from '../../../components/Certificates';
-
+import { Button } from '@/components/ui/button';
 
 function Home() {
   const { user } = useUser();
@@ -12,19 +11,28 @@ function Home() {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   useEffect(() => {
-    const fetchEnrolledCourses = async () => {
+    const fetchCompletedCourses = async () => {
       try {
         if (user) {
           const result = await GlobalApi.getUserAllEnrolledCourseList(user.emailAddresses);
-          console.log(result);  // Debugging step: log the result
-          setUserEnrolledCourses(result.userEnrollCourses);
+          console.log("Fetched courses:", result.userEnrollCourses); // Log the fetched courses for debugging
+
+          // Filter completed courses where all chapters are completed
+          const completedCourses = result.userEnrollCourses.filter(course => {
+            const totalChapters = course?.courseList?.chapter?.length || 0;
+            const completedChapters = course.completedCahpter?.length || 0;
+            return completedChapters === totalChapters && completedChapters > 0;
+          });
+
+          console.log("Completed courses:", completedCourses); // Log filtered completed courses
+          setUserEnrolledCourses(completedCourses);
         }
       } catch (error) {
-        console.error("Error fetching enrolled courses:", error);
+        console.error("Error fetching completed courses:", error);
       }
     };
 
-    fetchEnrolledCourses();
+    fetchCompletedCourses();
   }, [user]);
 
   const handleCourseClick = (course) => {
@@ -32,17 +40,18 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-200 p-4">
-      {userEnrolledCourses.length === 0 && <p>Loading or no courses found...</p>}
+    <div className="mt-[100px] min-h-screen flex flex-col items-center justify-center p-4">
+      <h2 className='text-2xl font-bold mb-4'>My Certificates</h2>
+      {userEnrolledCourses.length === 0 && <p>No completed courses found...</p>}
       <div className="flex flex-wrap justify-center gap-4">
-        {userEnrolledCourses.map((course, index) => (
-          <button 
+        {userEnrolledCourses.length > 0 && userEnrolledCourses.map((course, index) => (
+          <Button 
             key={index} 
-            className="p-4 bg-white shadow-md border rounded-md"
+            className="p-4 shadow-md border rounded-md"
             onClick={() => handleCourseClick(course)}
           >
             {course.courseList.name}
-          </button>
+          </Button>
         ))}
       </div>
       {selectedCourse && (

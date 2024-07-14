@@ -6,6 +6,7 @@ import SideBanner from './_components/SideBanner'
 import OurTeam from '../courses/_components/OurTeam'
 import Partener from '../courses/_components/Partener'
 import Testimonials from '../testimonial/page'
+import Trust from '../courses/_components/Trust';
 
 function Courses() {
   return (
@@ -19,6 +20,7 @@ function Courses() {
           {/* Course List  */}
             <CourseList/>
            <OurTeam/>
+           <Trust/>
       <Partener/>
       <Testimonials/>
       </div>

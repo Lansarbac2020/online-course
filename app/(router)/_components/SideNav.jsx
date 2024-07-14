@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
-import { BadgeCheck, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon } from 'lucide-react';
+import { BadgeCheck, BookCopy, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -48,8 +48,8 @@ function SideNav() {
     {
       id: 2,
       name: 'Blog',
-      icon: StoreIcon,
-      path: '/store',
+      icon: BookCopy,
+      path: '/blog',
       auth: true,
     },
     {
@@ -74,6 +74,15 @@ function SideNav() {
 
   return (
     <div>
+      {/* Announcement  */}
+      <div className="fixed inset-x-0 bottom-0">
+  <div className="bg-blue-600 px-4 py-3 text-white">
+    <p className="text-center text-sm font-medium">
+      Love Alpine JS?
+      <a href="#" className="inline-block underline"> Check out this new course! </a>
+    </p>
+  </div>
+</div>
       <nav className="w-full bg-primary shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
@@ -208,9 +217,16 @@ function SideNav() {
                 </div>
               </div>
               {isLoaded && user ? (
-               <div className='translate-x-[2px] border-2 p-2 
-               rounded-md'> <UserButton afterSignOutUrl="/courses"/> <span className='text-teal-50 font-bold'>Account</span>
-               </div>
+              <Popover>
+              <PopoverTrigger> <Image src={user?.imageUrl} height={35} width={35} alt='profile image' className='rounded-full'/></PopoverTrigger>
+              <PopoverContent className='w-44'>
+               <ul className='flex flex-col gap-2'>
+              
+              <Link href='/certificate' className='cursor-pointer hover:text-primary'>My Certificates</Link>
+              <div href='/' className='cursor-pointer hover:text-primary'><SignOutButton afterSignOutUrl='/courses'/></div>
+              <div href='/' className='cursor-pointer hover:text-primary'> <UserButton afterSignOutUrl='/courses'/> </div>
+               </ul></PopoverContent>
+              </Popover>
               ) : (
                 <Link href="/sign-in">
                   <div className=" translate-x-5 mt-7 border p-2 max-w-[180px]   text-center rounded-md bg-blue-700">Get Started</div>

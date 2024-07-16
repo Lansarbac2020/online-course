@@ -22,6 +22,7 @@ function SideNav() {
   const { user, isLoaded } = useUser();
   const path = usePathname();
   const [activeMenu, setActiveMenu] = useState(null); // State to track active menu item
+
  
 
   // Function to toggle sidebar visibility

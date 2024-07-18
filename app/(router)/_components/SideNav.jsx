@@ -176,7 +176,7 @@ function SideNav() {
         </div>
       </nav>
 
-      {/* Sidebar Menu for Mobile */}
+      {/* Sidebar Menu for Mocbile */}
       <div
         className={`fixed top-0 right-0 w-64 bg-white h-full shadow-lg z-20 transform ${
           sidebarOpen ? 'translate-x-0 ' : 'translate-x-full'

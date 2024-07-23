@@ -11,7 +11,7 @@ The Online Course Platform is a web-based learning management system designed to
 - **Discussion Forums**: Integrated discussion forums for students to interact with instructors and peers.
 - **Progress Tracking**: Track progress and performance metrics for enrolled students.
 - **Payment Integration**: *(To be implemented)* Integration with payment gateways for course enrollment fees.
-- **Store**: *(To be implemented)* Feature for selling digital products such as course materials.
+- **Blog**: Share daily news about new technology.
 - **Instructor Section**: *(To be implemented)* Section for instructors to manage their courses and interact with students.
 - **Responsive Design**: Responsive web design for optimal viewing experience across devices.
 

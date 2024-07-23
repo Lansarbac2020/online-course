@@ -76,14 +76,14 @@ function SideNav() {
   return (
     <div>
       {/* Announcement  */}
-      <div className="fixed inset-x-0 bottom-0">
+      {/* <div className="fixed inset-x-0 bottom-0">
   <div className="bg-blue-600 px-4 py-3 text-white">
     <p className="text-center text-sm font-medium">
       Love Alpine JS?
       <a href="#" className="inline-block underline"> Check out this new course! </a>
     </p>
   </div>
-</div>
+</div> */}
       <nav className="w-full bg-primary shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>

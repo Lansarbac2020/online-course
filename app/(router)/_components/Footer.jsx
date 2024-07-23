@@ -38,7 +38,7 @@ function Footer() {
           <Link href="/contact" className="hover:text-slate-500 transition-shadow">Nous contacter</Link>
           <Link href="/beinstructor" className="hover:text-slate-500 transition-shadow">Devenir Enseignant</Link>
           <Link href="/testimonial" className="hover:text-slate-500 transition-shadow">Temoignages</Link>
-          <Link href="#" className="hover:text-slate-500 transition-shadow">FAQs</Link>
+          <Link href="/faqs" className="hover:text-slate-500 transition-shadow">FAQs</Link>
         </FooterList>
         <FooterList className="p-5">
           <h3 className="text-base font-bold mb-2">Follows Us</h3>

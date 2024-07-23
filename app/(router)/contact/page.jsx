@@ -1,70 +1,59 @@
 
 "use client"
 import React, { useState } from 'react'
-import emailjs from '@emailjs/browser'
-import WelcomeBanner from '../courses/_components/WelcomeBanner'
+
+
 import { toast } from 'sonner';
 import Link from 'next/link';
-import { Instagram, LinkedinIcon, MailIcon, YoutubeIcon } from 'lucide-react';
+import { Instagram, LinkedinIcon, Loader2, MailIcon, YoutubeIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 function page() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    // cv: null
-});
+    const[loading, setLoading]=useState(false);
+    async function handleSubmit(event) {
 
-// const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     if (name === 'cv') {
-//         setFormData({
-//             ...formData,
-//             // cv: files[0]
-//         });
-//     } else {
-//         setFormData({
-//             ...formData,
-//             [name]: value
-//         });
-//     }
-// };
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData({
-      ...formData,
-      [name]: value
-  });
-};
+        
+        event.preventDefault();
+        const formData = new FormData(event.target);
 
-const handleSubmit = (e) => {
-    e.preventDefault();
+        formData.append("access_key", "ade659e2-264b-4003-b7ce-0d4995aaebc2");
+        
 
-    const formDataToSend = new FormData();
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('email', formData.email);
-    formDataToSend.append('message', formData.message);
-    // formDataToSend.append('cv', formData.cv);
-
-    emailjs.sendForm('service_krfcjal', 'template_dsn10kp', e.target, {publicKey:'3e0XDQPi9Ydh5g-qa'})
-        .then((result) => {
-            //console.log(result.text);
-           toast.success("Le formulaire a ete envoye avec succes",{
-            description:'Envoie du formulaire de contact'
-           })
-        }, (error) => {
-            console.log(error.text);
-            toast.error("Le formulaire non envoye",{
-              description:'Echec lors de l\'envoie formulaire'
-             })
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        setLoading(true);
+        const response = await fetch("https://api.web3forms.com/submit", {
+            
+            method: "POST",
+            // mode: "cors",
+            // cache: "no-cache",
+            // credentials: "same-origin",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: json
+          
         });
-};
+     
+        const result = await response.json();
+        if (result.success) {
+            setLoading(false)
+            //console.log(result);
+            toast('Email Sent successfully !');
+            event.target.reset();
+            
+        }
+    }
+
+
 
 return (
     <div className="mt-[90px] lg:translate-x-[-200px] mx-auto bg-white p-7 border border-gray-300 rounded-lg  lg:max-w-[700px] shadow-lg">
             
         <h2 className="text-2xl font-bold mb-6 text-center">Contact-Us</h2>
                 <div className='  gap-5'>
-                    <h2 className='float-left'>Veuillez remplir les champs ci-dessous pour nous contacter </h2>
+                    <h2 className='float-left'>Veuillez rdemplir les champs ci-dessous pour nous contacter </h2>
                     <div className='lg:flex  lg:translate-x-[100px] gap-2'>
                     <Link href='mailto:lansarbacoro@gmail.com' className='text-gray-500 hover:text-primary hover:scale-105'><MailIcon/></Link>
                     <Link href='#'
@@ -82,10 +71,8 @@ return (
                 </label>
                 <input
                     type="text"
-                    id="name"
+                    //id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
                 />
@@ -96,10 +83,9 @@ return (
                 </label>
                 <input
                     type="email"
-                    id="email"
+                    //id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                   
                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
                 />
@@ -110,10 +96,10 @@ return (
                     Message
                 </label>
                 <textarea
-                    id="message"
+                    //id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    //value={formData.message}
+                   // onChange={handleChange}
                     rows="4"
                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
@@ -134,12 +120,11 @@ return (
                 />
             </div> */}
             <div>
-                <button
+               <Button
                     type="submit"
                     className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:transition-shadow  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Submit
-                </button>
+                > {loading? <Loader2 className='animate-spin'/> : 'Submit' }
+                </Button>
             </div>
         </form>
     </div>

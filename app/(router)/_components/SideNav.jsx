@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
-import { BadgeCheck, BookCopy, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon } from 'lucide-react';
+import { BadgeCheck, BookCopy, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -84,7 +84,7 @@ function SideNav() {
     </p>
   </div>
 </div> */}
-      <nav className="w-full bg-primary shadow-md text-white fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-primary dark:bg-[#11001f] shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -95,7 +95,7 @@ function SideNav() {
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button
-                  className="p-2 text-primary rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-primary  rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={toggleSidebar} // Toggle sidebar visibility when clicking the hamburger icon
                   aria-expanded={sidebarOpen}
                   aria-controls="mobile-menu"
@@ -126,7 +126,7 @@ function SideNav() {
                       <li
                         className={clsx(
                           'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer font-bold uppercase hover:text-slate-300 hover:scale-105',
-                          path === item.path ? 'bg-primary border-b-2 text-white' : 'text-white'
+                          path === item.path ? ' dark:border-white border-b-2 text-white' : 'text-white'
                         )}
                         onClick={() => setActiveMenu(item.path)} // Set active menu item
                       >
@@ -138,11 +138,11 @@ function SideNav() {
             </ul>
             <div className="flex items-center gap-4">
             
-              <div className="flex h-[50px] bg-white gap-1 border p-2 rounded-md">
-                <Search className="h-9 w-5 text-black" />
-                <input type="text" placeholder="Search our 100+ courses" className="outline-none text-black"/>
+              <div className="flex h-[50px] bg-white dark:bg-[#1c1c1d] dark:border-white/50 gap-1 border p-2 rounded-md">
+                <Search className="h-9 w-5 text-black dark:text-white" />
+                <input type="text" placeholder="Search our 100+ courses" className="outline-none dark:bg-[#1c1c1d] text-black dark:text-white"/>
                 <div>
-                  <button className="bg-primary p-3 rounded-md translate-x-3 mr-1 translate-y-[-7.5px]">
+                  <button className="bg-primary dark:border-white/60 border h-[46px] dark:bg-[#11001f] p-3 rounded-md translate-x-3 mr-1 translate-y-[-7.5px]">
                     Search
                   </button>
                 </div>
@@ -154,8 +154,8 @@ function SideNav() {
 <PopoverContent className='w-44'>
  <ul className='flex flex-col gap-2'>
 
-<Link href='/certificate' className='cursor-pointer hover:text-primary'>My Certificates</Link>
-<div href='/' className='cursor-pointer hover:text-primary'><SignOutButton/></div>
+<Link href='/certificate' className='cursor-pointer hover:text-primary dark:hover:text-slate-400 dark:text-white'>My Certificates</Link>
+<div href='/' className='cursor-pointer hover:text-primary dark:hover:text-slate-400'><SignOutButton/></div>
  </ul></PopoverContent>
 </Popover>
                 // <div className='bg-white'>
@@ -164,7 +164,7 @@ function SideNav() {
                 
               ) : (
                 <Link href="/sign-in">
-                  <div className="border p-2 rounded-md bg-blue-700">Get Started</div>
+                  <div className="border p-2 rounded-md dark:border-white/60 bg-blue-700 dark:bg-[#2a004a] ">Get Started</div>
                 </Link>
               )}
             </div>
@@ -182,18 +182,19 @@ function SideNav() {
           sidebarOpen ? 'translate-x-0 ' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
-        <div className="flex flex-col  bg-primary h-full p-4">
+        <div className="flex flex-col  bg-primary dark:bg-[#11001f] h-full p-4">
           <button className="self-end mb-4" onClick={toggleSidebar}>
-            <Image src="/close.svg" width={30} height={30} alt="Close menu" />
+            <X/>
+            
           </button>
-          <ul className="flex flex-col bg-primary gap-2">
+          <ul className="flex flex-col bg-primary dark:bg-[#11001f] gap-2">
             {menu.map(
               (item) =>
                 item.auth && (
                   <Link href={item.path} key={item.id}>
                     <li
-                      className={`py-2 px-4 bg-primary transition-all ease-in-out duration-200 cursor-pointer hover:text-slate-400  ${
-                        path === item.path ? 'bg-slate-100 text-black' : 'text-white'
+                      className={`py-2 px-4 bg-primary dark:bg-[#11001f] transition-all ease-in-out duration-200 cursor-pointer hover:text-slate-400  ${
+                        path === item.path ? 'bg-slate-100 dark:bg-[#11001f] dark:border-b dark:border-b-white dark:text-white text-black' : 'text-white'
                       }`}
                       onClick={() => {
                         setSidebarOpen(false);
@@ -208,11 +209,11 @@ function SideNav() {
             )}
           </ul>
           <div className=" mt-9 grid gap-4">
-             <div className="flex  max-w-[250px] bg-white gap-1 border p-2 rounded-md">
+             <div className="flex  max-w-[250px] bg-white  dark:bg-[#11001f] gap-1 border p-2 rounded-md">
                 <Search className="h-8 w-4 text-black" />
-                <input type="text" placeholder="Search..." className="outline-none max-w-[95px] text-black" />
+                <input type="text" placeholder="Search..." className="outline-none max-w-[95px] dark:text-white dark:bg-[#1c1c1d] text-black" />
                 <div>
-                <button className="bg-primary text-white  max-w-[80px] p-3 rounded-md translate-x-3 mr-1">
+                <button className="bg-primary dark:bg-[#11001f] text-white  max-w-[80px] p-3 rounded-md translate-x-3 mr-1">
                     Search
                   </button>
                 </div>
@@ -223,14 +224,14 @@ function SideNav() {
               <PopoverContent className='w-44'>
                <ul className='flex flex-col gap-2'>
               
-              <Link href='/certificate' className='cursor-pointer hover:text-primary'>My Certificates</Link>
-              <div href='/' className='cursor-pointer hover:text-primary'><SignOutButton afterSignOutUrl='/courses'/></div>
-              <div href='/' className='cursor-pointer hover:text-primary'> <UserButton afterSignOutUrl='/courses'/> </div>
+              <Link href='/certificate' className='cursor-pointer hover:text-primary dark:hover:text-slate-500'>My Certificates</Link>
+              <div href='/' className='cursor-pointer hover:text-primary dark:hover:text-slate-500'><SignOutButton afterSignOutUrl='/courses'/></div>
+              {/* <div href='/' className='cursor-pointer hover:text-primary'> <UserButton afterSignOutUrl='/courses'/> </div> */}
                </ul></PopoverContent>
               </Popover>
               ) : (
                 <Link href="/sign-in">
-                  <div className=" translate-x-5 mt-7 border p-2 max-w-[180px]   text-center rounded-md bg-blue-700">Get Started</div>
+                  <div className=" translate-x-5 mt-7 border p-2 max-w-[180px] hover:scale-105  dark:border-white/60   text-center rounded-md bg-blue-700 dark:bg-[#2a004a]">Get Started</div>
                 </Link>
               )}
             </div>

@@ -26,10 +26,10 @@ function CourseList() {
   };
 
   return (
-    <div className='p-5 bg-white rounded-lg mt-3'>
+    <div className='p-5 bg-white dark:bg-[#11001f] rounded-lg mt-3'>
       {/* Title and Filter */}
       <div className='flex flex-col lg:flex-row items-center justify-between'>
-        <h2 className='text-[20px] font-bold text-primary mb-4 lg:mb-0 lg:mr-4'>
+        <h2 className='text-[20px] font-bold text-primary mb-4 lg:mb-0 lg:mr-4 dark:text-white/90'>
           All Courses
         </h2>
         <Select>
@@ -57,7 +57,7 @@ function CourseList() {
           [1, 2, 3, 4, 5, 6, 7].map((item, index) => (
             <div
               key={index}
-              className='w-full h-[240px] rounded-xl m-2 bg-slate-200 animate-pulse'
+              className='w-full h-[240px] rounded-xl m-2 bg-slate-200 dark:bg-slate-500 animate-pulse'
             ></div>
           ))
         )}

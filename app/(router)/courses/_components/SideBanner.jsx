@@ -17,7 +17,7 @@ function SideBanner() {
     }
 
     return (
-        <div>
+        <div className='bg-[#11001f]'>
             {sideBanners && sideBanners.length > 0 ? (
                 sideBanners.map((item, index) => (
                     <div key={index}>
@@ -27,7 +27,7 @@ function SideBanner() {
                     </div>
                 ))
             ) : (
-                <div>No side banners available</div>
+                <div></div>
             )}
         </div>
     );

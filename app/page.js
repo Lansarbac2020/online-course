@@ -23,7 +23,7 @@ export default function Home() {
   },[user])
   return (
  
-        <main className="container"> 
+        <main className="container dark"> 
         <div className="content">
     <UserButton afterSignOutUrl="/sign-in" />
 

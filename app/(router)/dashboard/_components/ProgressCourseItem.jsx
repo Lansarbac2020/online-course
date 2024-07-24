@@ -17,7 +17,7 @@ function ProgressCourseItem({ course }) {
 
   return (
     
-      <div className='border rounded-md'>
+      <div className='border dark:border-white/45 rounded-md'>
         <Image src={course.courseList?.banner?.url}
           width={500}
           height={150}
@@ -31,8 +31,8 @@ function ProgressCourseItem({ course }) {
             {getTotalCompletedChapterPerc(course)}%
             <span className='float-right'>{Math.min(course.completedCahpter?.length || 0, course?.courseList?.chapter?.length || 0)}/{course?.courseList?.chapter?.length} Chapters</span>
           </h2>
-          <div className='bg-black'> </div>
-          <Progress value={getTotalCompletedChapterPerc(course)} className="h-[7px]" />
+          <div className='bg-black dark:bg-white'> </div>
+          <Progress value={getTotalCompletedChapterPerc(course)} className="h-[7px] dark:bg-white" />
         </div>
         {/* Afficher l'icône de téléchargement si le progrès du cours est de 100% */}
       
@@ -50,6 +50,9 @@ function ProgressCourseItem({ course }) {
             <Link href={'/course-preview/'+course?.courseList?.slug}>
             <Button className=' flex
             hover:scale-105
+            dark:border
+            dark:border-white
+            dark:bg-[#11001f]
             justify-start text-white '>
                Watch <EyeIcon className='ml-3 text-white' />
             </Button>

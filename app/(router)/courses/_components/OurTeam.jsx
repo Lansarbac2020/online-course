@@ -12,7 +12,7 @@ const teamMembers = [
 
 function OurTeam() {
   return (
-    <div className="mt-5 p-3  translate-x-[2px] rounded-md bg-white py-10">
+    <div className="mt-5 p-3  translate-x-[2px] rounded-md bg-white py-10 dark:bg-[#11001f]">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Notre Equipe</h2>
         <p className='p-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum deserunt adipisci autem tenetur ullam rerum ipsa aperiam laboriosam harum quia quo porro corrupti inventore qui id voluptatem, voluptate sequi suscipit.</p>
@@ -20,7 +20,7 @@ function OurTeam() {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap gap-6 justify-center">
           {teamMembers.map(member => (
-            <div key={member.id} className="flex flex-col items-center p-4 hover:scale-105 transform transition duration-300 bg-gray-100 shadow-md rounded-md hover:cursor-pointer hover:shadow-lg">
+            <div key={member.id} className="flex flex-col items-center p-4 hover:scale-105 transform transition duration-300 bg-gray-100 dark:bg-[#11001f] dark:border dark:border-white/70  shadow-md rounded-md hover:cursor-pointer hover:shadow-lg">
           <div>
                   <Image
                     src={member.photo}
@@ -30,7 +30,7 @@ function OurTeam() {
                     className="object-cover rounded-full mb-4"
                   />
                   <h3 className="text-lg font-bold">{member.name}</h3>
-                  <p className="text-gray-600">{member.position}</p>
+                  <p className="text-gray-600 dark:text-white/50">{member.position}</p>
                   <Link 
                     target="_blank"
                    

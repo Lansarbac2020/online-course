@@ -26,14 +26,14 @@ function Partner() {
   };
 
   return (
-    <div className="max-w-[1200px] translate-x-[2px] rounded-md bg-white py-10 p-5 mt-3 relative">
+    <div className="max-w-[1200px] translate-x-[2px] rounded-md bg-white py-10 p-5 mt-3 relative dark:bg-[#11001f]">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Nos Partenaires</h2>
       </div>
-      <div className="container mx-auto px-4 overflow-hidden relative">
+      <div className="container mx-auto   px-4 overflow-hidden relative">
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 dark:bg-[#11001f] p-2 rounded-full hover:bg-gray-400 dark:hover:bg-[#2a004a] dark:border-gray-100"
         >
           &lt;
         </button>
@@ -43,7 +43,7 @@ function Partner() {
         >
           {partners.concat(partners).map((partner, index) => (
             <Link href={partner.url} key={index}>
-              <div className="flex items-center justify-center p-4 shadow-md rounded-md min-w-[150px] hover:cursor-pointer hover:shadow-slate-400">
+              <div className="flex items-center justify-center p-4 shadow-md rounded-md min-w-[150px] hover:cursor-pointer hover:shadow-slate-400 dark:hover:bg-[#2a004a]">
                 <Image
                   src={partner.logo}
                   alt={partner.name}
@@ -57,7 +57,7 @@ function Partner() {
         </div>
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full hover:bg-gray-400"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 dark:bg-[#11001f] p-2 rounded-full hover:bg-gray-400"
         >
           &gt;
         </button>

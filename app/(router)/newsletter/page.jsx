@@ -53,8 +53,8 @@ function Newsletter() {
           <WelcomebannerNewsletter/>
         </div>
         <div className="mt-5 md:mt-0 md:w-1/3 lg:w-1/4">
-          <form onSubmit={handleJoinNow} className="bg-white space-y-4 mr-3 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
-            <p className="text-center text-lg font-medium mr-3">Ajoutez vos e-mails pour vous abonner</p>
+          <form onSubmit={handleJoinNow} className="bg-white dark:bg-[#11001f] space-y-4 mr-3 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+            <p className="text-center text-lg font-medium mr-3">Ajoutez votre e-mails pour vous abonner</p>
             {alertMessage && (
               <div className="alert text-center text-green-600">{alertMessage}</div>
             )}
@@ -65,7 +65,7 @@ function Newsletter() {
                 id="email"
                 name="email"
                 autoComplete="off"
-                className="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                className="w-full rounded-lg bg-gray-200 dark:bg-[#282829] dark:border-white/45 p-4 text-sm shadow-sm"
                 placeholder="Enter email"
                 required
               />
@@ -77,14 +77,14 @@ function Newsletter() {
                 id="fullName"
                 name="fullName"
                 autoComplete="off"
-                className="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                className="w-full rounded-lg bg-gray-200 dark:bg-[#282829] p-4 text-sm shadow-sm"
                 placeholder="Enter Full Name"
                 required
               />
             </div>
             <button
               type="submit"
-              className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+              className="block w-full rounded-lg bg-primary dark:bg-[#2a004a] dark:border dark:border-white/50 px-5 py-3 text-sm font-medium text-white hover:scale-105 hover:shadow-md"
             >{loading? <LoaderCircle className='animate-spin'/>:
               'Join Now'}
             </button>

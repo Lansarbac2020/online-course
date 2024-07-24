@@ -43,9 +43,9 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
         {courseInfo.author}
       </span>
       <div className='
-        bg-white mt-5 font-bold'>
+        bg-white dark:bg-[#11001f] mt-5 font-bold'>
           Course Materials: 
-          <span className=' ml-2 text-sm text-slate-500 justify-eve'>Retrouver ci-dessous les materiels du cours</span>
+          <span className=' ml-2 text-sm text-slate-500 dark:text-slate-300 justify-eve'>Retrouver ci-dessous les materiels du cours</span>
           <div className='flex gap-1 justify-center
           lg:justify-between mt-5'>
          {courseInfo?.demoUrl ? (
@@ -55,13 +55,13 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
           </>
         </Link>
       ) : (
-        <Button className='hover:scale-105 cursor-not-allowed gap-2' disabled>
+        <Button className='hover:scale-105 cursor-not-allowed gap-2 dark:bg-[#2a004a] dark:text-white border dark:border-white' disabled>
           <RadioTower className='' /> Demo Url not available
         </Button>
       )}
              {courseInfo?.sourceCode? (
         <Link href={courseInfo.sourceCode}>
-          <Button className='hover:scale-105 cursor-pointer gap-2'>
+          <Button className='hover:scale-105 cursor-pointer gap-2 dark:bg-[#2a004a] border dark:border-white dark:text-white'>
             <Code className='' /> Source code
           </Button>
         </Link>

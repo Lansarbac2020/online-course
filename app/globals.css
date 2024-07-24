@@ -39,7 +39,8 @@ body{
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    
+    
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -75,6 +76,9 @@ body{
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .dark body {
+    background-color: #343a40
   }
   @keyframes marquee {
     0% {

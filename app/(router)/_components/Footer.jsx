@@ -1,35 +1,59 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FooterList from './FooterList';
 import Link from 'next/link';
 import { FacebookIcon, Instagram, LinkedinIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-function Footer() {
+const useDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (theme === 'dark' || (!theme && prefersDarkMode)) {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDarkMode(false);
+    }
+  }, []);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
   };
 
+  return { isDarkMode, toggleTheme };
+};
+
+function Footer() {
+  const { isDarkMode, toggleTheme } = useDarkMode();
+
   return (
-    <footer className="text-white bg-primary text-sm mt-16">
+    <footer className="text-white bg-primary dark:bg-[#11001f] text-sm mt-16">
       <div className="max-w-[1920px] mx-auto px-4 pt-16 pb-8 flex flex-col md:flex-row justify-between">
         {/* Footer content goes here */}
         <FooterList className="p-5">
           <h3 className="text-base font-bold mb-2">Nos Partenaires</h3>
           <Link href="https://google.com" className="hover:text-slate-500 transition-shadow flex gap-2">
-            <Image src="/chercher.png" width={30} height={30} alt="logo" />
+            <Image src="/chercher.png" width={30} height={30} alt="Google logo" />
             <h3>Google</h3>
           </Link>
           <Link href="https://google.com" className="hover:text-slate-500 transition-shadow flex gap-2">
-            <Image src="/orangemali.png" width={30} height={30} alt="logo" />
+            <Image src="/orangemali.png" width={30} height={30} alt="Orange-Mali logo" />
             <h3>Orange-Mali</h3>
           </Link>
           <Link href="https://google.com" className="hover:text-slate-500 transition-shadow flex gap-2">
-            <Image src="/gov-of-mali.png" width={30} height={30} alt="logo" />
+            <Image src="/gov-of-mali.png" width={30} height={30} alt="Gouvernement du Mali logo" />
             <h3>Gouvernement du Mali</h3>
           </Link>
         </FooterList>
@@ -60,15 +84,12 @@ function Footer() {
             </Link>
             <button className="toggle-button" onClick={toggleTheme}>
               {isDarkMode ? (
-                <MoonIcon className="icon" size={20} />
-              ) : (
                 <SunIcon className="icon" size={20} />
+              ) : (
+                <MoonIcon className="icon" size={20} />
               )}
             </button>
           </div>
-          <Link className='p-4' href="/newsletter">
-            <Button>Newsletter</Button>
-          </Link>
         </FooterList>
         <div className="w-full md:w-1/3 mb-6 md:mb-0">
           <iframe 
@@ -77,6 +98,8 @@ function Footer() {
             height="200" 
             className="border-0" 
             loading="lazy" 
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <p className='mt-4'>&copy; {new Date().getFullYear()} LansarCenter-Academy. All rights reserved</p>
         </div>

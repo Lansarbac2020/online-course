@@ -9,7 +9,7 @@ const checkisChapterCompleted=(chapterId)=>{
 }
 
   return (
-    <div className='p-3 bg-white rounded-sm'>
+    <div className='p-3 bg-white  dark:bg-[#11001f] rounded-sm'>
         <h2>Contenus</h2>
         {courseInfo.chapter.map((item,index)=>(
             <div>
@@ -17,8 +17,8 @@ const checkisChapterCompleted=(chapterId)=>{
                 m-2 hover:bg-gray-200
                 hover:text-gray-500
                 border rounded-sm px-4 cursor-pointer
-                ${activeIndex==index && 'bg-primary text-white'}
-                ${isUserAlreadyEnrolled&& 'hover:bg-primary hover:text-white'}
+                ${activeIndex==index && 'bg-primary dark:bg-[#2a004a] text-white'}
+                ${isUserAlreadyEnrolled&& 'hover:bg-primary dark:hover:bg-[#2a004a] hover:text-white'}
 
                 ${watchMode&&checkisChapterCompleted(item.id)
                 && 'border-green-800 bg-green-400'}

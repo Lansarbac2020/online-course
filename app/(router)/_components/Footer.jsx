@@ -1,39 +1,10 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FooterList from './FooterList';
 import Link from 'next/link';
 import { FacebookIcon, Instagram, LinkedinIcon, MoonIcon, SunIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-
-const useDarkMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (theme === 'dark' || (!theme && prefersDarkMode)) {
-      document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove('dark');
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-    if (document.documentElement.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
-  return { isDarkMode, toggleTheme };
-};
+import useDarkMode from '../../hooks/useDarkMode'  // Adjust the path according to your project structure
 
 function Footer() {
   const { isDarkMode, toggleTheme } = useDarkMode();
@@ -41,7 +12,7 @@ function Footer() {
   return (
     <footer className="text-white bg-primary dark:bg-[#11001f] text-sm mt-16">
       <div className="max-w-[1920px] mx-auto px-4 pt-16 pb-8 flex flex-col md:flex-row justify-between">
-        {/* Footer content goes here */}
+        {/* Footer content */}
         <FooterList className="p-5">
           <h3 className="text-base font-bold mb-2">Nos Partenaires</h3>
           <Link href="https://google.com" className="hover:text-slate-500 transition-shadow flex gap-2">

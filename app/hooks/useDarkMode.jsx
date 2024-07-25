@@ -4,7 +4,7 @@ const useDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
 
     const applyTheme = (darkMode) => {
       if (darkMode) {

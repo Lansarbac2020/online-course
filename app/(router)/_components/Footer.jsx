@@ -70,6 +70,8 @@ function Footer() {
             className="border-0" 
             loading="lazy" 
             allowFullScreen
+
+            
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <p className='mt-4'>&copy; {new Date().getFullYear()} LansarCenter-Academy. All rights reserved</p>

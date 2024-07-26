@@ -26,7 +26,7 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
       <h2 className='mt-5 text-lg font-semibold'>
         {watchMode ?
           <span className='flex justify-between items-center'>{courseInfo?.chapter[activeChapterIndex]?.name}
-            <Button className='text-[10px] w-full' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
+            <Button className='text-[10px] w-full dark:text-white dark:bg-[#2a004a] border dark:border-white/45' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
           </span>
           : <span>Description du cours</span>
         }
@@ -42,24 +42,24 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
        <span className='mr-4 text-base font-bold leading-6'>
         {courseInfo.author}
       </span>
-      <div className='
+     <div className='
         bg-white dark:bg-[#11001f] mt-5 font-bold'>
           Course Materials: 
           <span className=' ml-2 text-sm text-slate-500 dark:text-slate-300 justify-eve'>Retrouver ci-dessous les materiels du cours</span>
-          <div className='flex gap-1 justify-center
+          <div className='flex gap-3 justify-center
           lg:justify-between mt-5'>
-         {courseInfo?.demoUrl ? (
+         { watchMode&& courseInfo?.demoUrl ? (
         <Link href={courseInfo.demoUrl}>
-          <>
-            
-          </>
+            <Button className='hover:scale-105 cursor-pointer gap-2 dark:bg-[#2a004a] dark:text-white border dark:border-white' >
+          <RadioTower className='' /> Demo Url
+        </Button>
         </Link>
       ) : (
         <Button className='hover:scale-105 cursor-not-allowed gap-2 dark:bg-[#2a004a] dark:text-white border dark:border-white' disabled>
           <RadioTower className='' /> Demo Url not available
         </Button>
       )}
-             {courseInfo?.sourceCode? (
+             {  watchMode&&courseInfo?.sourceCode? (
         <Link href={courseInfo.sourceCode}>
           <Button className='hover:scale-105 cursor-pointer gap-2 dark:bg-[#2a004a] border dark:border-white dark:text-white'>
             <Code className='' /> Source code
@@ -70,6 +70,7 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
           
         </>
       )}
+  
          
    
          

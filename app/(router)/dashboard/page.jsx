@@ -26,16 +26,16 @@ function Dashboard() {
   }
   return (
     <div className='mt-[90px]'>
-          <div className='grid grid-cols-1 lg:grid-cols-3  xl:grid-cols-4 gap-5 p-5'>
+          <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3  xl:grid-cols-4 gap-5 p-5'>
       {/* Left Container  */}
-      <div className='col-span-1 lg:col-span-2 xl:col-span-3'>
+      <div className='col-span-1 lg:col-span-2  xl:col-span-3'>
           {/* Banner  */}
      <WelcomeBannerDashboard user={user}/>
      {/* In progress courseList */}
      <InProgressCourseList userEnrolledCourses={userEnrolledCourses}/>
       </div>
       {/* Right Container */}
-      <div className=' sm:mt-[170px] col-span-1'>
+      <div className=' sm:mt-[170px] p-2 col-span-1'>
         <SideBanner/>
       </div>
     </div>

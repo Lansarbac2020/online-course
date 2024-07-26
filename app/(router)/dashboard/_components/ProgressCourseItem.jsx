@@ -41,8 +41,9 @@ function ProgressCourseItem({ course }) {
           {getTotalCompletedChapterPerc(course) === '100' && (
             <Link href={'/certificate/'}>
             <Button className='text-white
-             hover:scale-105 '>
-              Certificate<Download className=' ml-3 text-white' />
+             hover:scale-105'>
+              <span className='md:hidden'>Certificate</span>
+              <Download className=' ml-3 text-white' />
             </Button> 
             </Link>
             )}
@@ -54,7 +55,7 @@ function ProgressCourseItem({ course }) {
             dark:border-white
             dark:bg-[#11001f]
             justify-start text-white '>
-               Watch <EyeIcon className='ml-3 text-white' />
+               <span className='md:hidden'>View</span> <EyeIcon className='ml-3 text-white' />
             </Button>
             </Link>
           

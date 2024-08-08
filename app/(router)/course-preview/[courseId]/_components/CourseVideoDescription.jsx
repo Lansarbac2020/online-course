@@ -26,7 +26,7 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
       <h2 className='mt-5 text-lg font-semibold'>
         {watchMode ?
           <span className='flex justify-between items-center'>{courseInfo?.chapter[activeChapterIndex]?.name}
-            <Button className='text-[10px] w-full dark:text-white dark:bg-[#2a004a] border dark:border-white/45' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
+            <Button className='text-[10px] w-full dark:text-white dark:bg-[#2a004a] border dark:border-white/45 ' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
           </span>
           : <span>Description du cours</span>
         }

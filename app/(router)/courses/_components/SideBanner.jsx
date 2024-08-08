@@ -21,7 +21,7 @@ function SideBanner() {
             {sideBanners && sideBanners.length > 0 ? (
                 sideBanners.map((item, index) => (
                     <div key={index}>
-                        <Image src={item.banner.url} alt='banner' width={500} height={300} 
+                        <Image src={item.banner.url} alt='banner' width={500} height={300}
                         onClick={()=>window.open(item?.url)}
                         className='rounded-lg cursor-pointer'/>
                     </div>

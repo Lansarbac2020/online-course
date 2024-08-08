@@ -35,7 +35,7 @@ function OurTeam() {
                     target="_blank"
                    
                     className="mt-2 text-blue-400"
-                    href={member.url}
+                    href={member.url} 
                     aria-label={`Follow ${member.name} on LinkedIn`}
                   >
                     <Linkedin size={24} />

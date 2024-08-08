@@ -14,7 +14,7 @@ const checkisChapterCompleted=(chapterId)=>{
         {courseInfo.chapter.map((item,index)=>(
             <div>
                 <h2 className={`p-2 text-[14px] flex justify-between items-center
-                m-2 hover:bg-gray-200
+                m-2 hover:bg-gray-200 
                 hover:text-gray-500
                 border rounded-sm px-4 cursor-pointer
                 ${activeIndex==index && 'bg-primary dark:bg-[#2a004a] text-white'}

@@ -6,6 +6,7 @@ import Footer from './_components/Footer'
 import Link from 'next/link'
 import OurTeam from './courses/_components/OurTeam'
 import Partener from './courses/_components/Partener'
+import ScrollToTop from '../(router)/_components/ScrollToTop'
 
 
 function layout({children}) {
@@ -23,6 +24,7 @@ function layout({children}) {
         </div>
         
        <Footer/>
+        <ScrollToTop/>
         
          {/* <Footer/>        */}
 </div>

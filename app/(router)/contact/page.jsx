@@ -53,7 +53,7 @@ return (
             
         <h2 className="text-2xl font-bold mb-6 text-center">Contact-Us</h2>
                 <div className='  gap-5'>
-                    <h2 className='float-left'>Veuillez rdemplir les champs ci-dessous pour nous contacter </h2>
+                    <h2 className='float-left'>Veuillez remplir les champs ci-dessous pour nous contacter </h2>
                     <div className='lg:flex  lg:translate-x-[100px] gap-2'>
                     <Link href='mailto:lansarbacoro@gmail.com' className='text-gray-500 dark:text-white hover:text-primary hover:scale-105'><MailIcon/></Link>
                     <Link href='#'
@@ -105,20 +105,7 @@ return (
                     required
                 ></textarea>
             </div>
-            {/* <div>
-                <label htmlFor="cv" className="block text-sm font-medium text-gray-700">
-                    Télécharger CV (PDF uniquement)
-                </label>
-                <input
-                    type="file"
-                    id="cv"
-                    name="cv"
-                    accept=".pdf"
-                    onChange={handleChange}
-                    className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100"
-                    required
-                />
-            </div> */}
+           
             <div>
                <Button
                     type="submit"

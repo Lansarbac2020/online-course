@@ -21,9 +21,9 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+const  Testimonials = () => {
   return (
-    <div className=" mt-[90px] bg-gray-100 dark:bg-[#11001f] lg:-translate-x-[12%] md:-translate-x-[12%] sm:mr-4 sm:ml-4 text-center py-12">
+    <div className="mt-3 max-w-[1200px] translate-x-[2px] rounded-md bg-gray-100 py-10 p-5  relative dark:bg-[#11001f]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12  dark:text-white">Testimonials</h2>
         <div className="grid gap-8 lg:grid-cols-3">

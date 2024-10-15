@@ -16,13 +16,13 @@ function WelcomeBanner() {
       </div>
       <div className="mt-5 md:mt-0 md:ml-8 text-center md:text-left">
         <h2 className="font-bold text-3xl md:text-4xl text-black dark:text-white/100">
-          Welcome to <span className="text-primary dark:text-blue-400">LansarCenter-Academy</span>
+          Welcome to <span className="text-primary dark:text-blue-400">Ika'Kalanso</span>
         </h2>
         <p className="text-gray-600 text-lg md:text-xl mt-2 dark:text-white/60">
-          Explore, learn, and create your own real-world projects
+        Explorez, apprenez et créez vos propres projets 
         </p>
         <p className="text-gray-400 text-base md:text-lg mt-2 italic">
-          "Open the doors to your future with quality education"
+          "Ouvrez les portes de votre avenir grâce à une éducation de qualité"
         </p>
         <Link href='/courses' className="mt-4 text-center">
           <button className="px-4 py-2 text-center bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition duration-300 dark:border dark:border-white">

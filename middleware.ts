@@ -1,16 +1,13 @@
-import { authMiddleware } from "@clerk/nextjs";
- 
-// See https://clerk.com/docs/references/nextjs/auth-middleware
-// for more information about configuring your Middleware
-export default authMiddleware({
-    publicRoutes:['/', '/courses', '/course-preview/(.*)' ]
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+
+const isPublicRoute = createRouteMatcher(['/', '/courses', '/course-preview/(.*)']);
+
+export default clerkMiddleware((auth, request) => {
+  if(!isPublicRoute(request)) {
+    auth().protect();
+  }
 });
- 
+
 export const config = {
-  matcher: [
-   
-    "/((?!.+\\.[\\w]+$|_next).*)",
-   
-    "/(api|trpc)(.*)"
-  ]
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };

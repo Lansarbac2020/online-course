@@ -90,7 +90,13 @@ function SideNav() {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="font-bold text-left">Lansar-Academy</h2>
+                {/* <h2 className="font-bold text-left">IKa'KalanSo</h2> */}
+                <Image
+                src='/ikklogo.png'
+                alt=''
+                width={90}
+                height={25}
+                />
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">

@@ -169,7 +169,7 @@ function SideNav() {
                 //   </div>
                 
               ) : (
-                <Link href="/sign-up">
+                <Link href="/sign-in">
                   <div className="border p-2 rounded-md dark:border-white/60 bg-blue-700 dark:bg-[#2a004a] ">Get Started</div>
                 </Link>
               )}

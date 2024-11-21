@@ -7,13 +7,14 @@ import OurTeam from '../courses/_components/OurTeam'
 import Partener from '../courses/_components/Partener'
 import Testimonials from '../testimonial/page'
 import Trust from '../courses/_components/Trust';
+import Workflow from '../herosection/page'
 
 function Courses() {
   return (
-    <div className='mt-[90px]'>
-      <div className='grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5'>
+    <div className='mt-[120px]'>
+      <div className='md:flex items-center justify-center grid grid-cols-1 p-5 m-3'>
       {/* Left Container  */}
-      <div className='col-span-3'>
+      <div className=''>
           {/* Banner  */}
            <WelcomeBanner/> 
 
@@ -21,13 +22,14 @@ function Courses() {
             <CourseList/>
            <OurTeam/>
            <Trust/>
+           <Workflow/>
       <Partener/>
       <Testimonials/>
       </div>
-      {/* Right Container */}
+      {/* Right Container
       <div className=''>
         <SideBanner/>
-      </div>
+      </div> */}
       </div>
      
     </div>

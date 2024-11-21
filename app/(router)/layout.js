@@ -17,7 +17,7 @@ function layout({children}) {
             <SideNav/>
           
         </div>
-        <div className='md:ml-64'>
+        <div className='md:m-16'>
             {/* <Header/> */}
         {children}
         

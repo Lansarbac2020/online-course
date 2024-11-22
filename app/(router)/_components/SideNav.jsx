@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
-import { BadgeCheck, BookCopy, BookOpen, LayoutDashboardIcon, MailIcon, Search, StoreIcon, X } from 'lucide-react';
+import { BadgeCheck, BookCopy, BookOpen, LayoutDashboardIcon, Loader2, MailIcon, Search, StoreIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -22,6 +22,7 @@ function SideNav() {
   const { user, isLoaded } = useUser();
   const path = usePathname();
   const [activeMenu, setActiveMenu] = useState(null); // State to track active menu item
+  const [isLoading, setIsLoading] = useState(false);
 
  
 
@@ -73,6 +74,15 @@ function SideNav() {
     setActiveMenu(path);
   }, [path]);
 
+
+  function handleLinkClick(url) {
+    setIsLoading(true); // Activer le chargement
+    setTimeout(() => {
+      setIsLoading(false); // Désactiver après une action simulée
+      window.location.href = url; // Naviguer vers l'URL
+    }, 1000); // Vous pouvez ajuster ce délai
+  }
+  
   return (
     <div>
       {/* Announcement  */}
@@ -124,24 +134,28 @@ function SideNav() {
 
           {/* Main Menu for Desktop */}
           <div className={clsx('hidden md:flex md:items-center md:space-x-2')}>
-            <ul className="md:flex md:space-x-2">
-              {menu.map(
-                (item) =>
-                  item.auth && (
-                    <Link href={item.path} key={item.id}>
-                      <li
-                        className={clsx(
-                          'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer font-bold uppercase hover:text-slate-300 hover:scale-105',
-                          path === item.path ? ' dark:border-white border-b-2 text-white' : 'text-white'
-                        )}
-                        onClick={() => setActiveMenu(item.path)} // Set active menu item
-                      >
-                        {item.name}
-                      </li>
-                    </Link>
-                  )
-              )}
-            </ul>
+          <ul className="md:flex md:space-x-2">
+  {menu.map(
+    (item) =>
+      item.auth && (
+        <li
+          key={item.id}
+          className={clsx(
+            'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer font-bold uppercase hover:text-slate-300 hover:scale-105',
+            path === item.path ? 'dark:border-white border-b-2 text-white' : 'text-white'
+          )}
+          onClick={() => handleLinkClick(item.path)}
+        >
+          {isLoading && activeMenu === item.path ? (
+            <span className="spinner border-white"></span> // Ajoutez un spinner
+          ) : (
+            item.name
+          )}
+        </li>
+      )
+  )}
+</ul>
+
             <div className="flex items-center gap-4">
             
               <div className="flex h-[50px] bg-white dark:bg-[#1c1c1d] dark:border-white/50 gap-1 border p-2 rounded-md">
@@ -170,7 +184,12 @@ function SideNav() {
                 
               ) : (
                 <Link href="/sign-in">
-                  <div className="border p-2 rounded-md dark:border-white/60 bg-blue-700 dark:bg-[#2a004a] ">Get Started</div>
+                  <button
+              onClick={() => handleLinkClick('/sign-in')}
+              className="border p-2 rounded-md dark:border-white/60 bg-blue-700 dark:bg-[#2a004a]"
+              >
+  {isLoading ? <Loader2 className='animate-spin'/> : 'Get Started'}
+</button>
                 </Link>
               )}
             </div>

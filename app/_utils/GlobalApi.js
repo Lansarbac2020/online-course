@@ -1,7 +1,7 @@
 const {gql, default: request} = require("graphql-request")
 const MASTER_URL="https://api-us-east-1-shared-usea1-02.hygraph.com/v2/"+process.env.NEXT_PUBLIC_HYGRAPH_API_KEY+"/master"
 
-const getAllCourseList=async()=>{
+const getAllCourseList=async(search ='')=>{
   const query=gql`
   query Courses {
     courses  (first: 20, orderBy: createdAt_DESC) {
@@ -243,21 +243,36 @@ const AddNewMember=async(email ,paymentId)=>{
 const SEARCH_COURSES = async (searchTerm) => {
   const query = gql`
     query SearchCourses($searchTerm: String!) {
-      searchCourses(query: $searchTerm) {
-        id
-        name
-        author
-        description
-        banner {
-          url
-        }
-      }
-    }
+  courses(where: {
+    OR: [
+      { name_contains: $searchTerm },
+      { description_contains: $searchTerm }
+    ]
+  }) {
+    id
+    name
+    author
+    description
+  }
+}
   `;
-  
-  const result = await request(MASTER_URL, query, { searchTerm });
-  return result;
+
+  try {
+    // Pass the variable in the third argument of the `request` function
+    const variables = { searchTerm }; // Equivalent to { "searchTerm": "React" }
+    const result = await request(MASTER_URL, query, variables); 
+    return result;
+  } catch (error) {
+    console.error("GraphQL Error:", error.response || error);
+    throw error;
+  }
 };
+
+// Example Usage
+SEARCH_COURSES("React")
+  .then((data) => console.log("Courses:", data))
+  .catch((err) => console.error("Error:", err));
+
  
 
 export default{

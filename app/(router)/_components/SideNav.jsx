@@ -14,7 +14,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
+import SearchBar from './SearchBar'
 
 
 function SideNav() {
@@ -218,11 +218,10 @@ function SideNav() {
              <div className="flex  max-w-[250px] bg-white  dark:bg-[#11001f] gap-1 border p-2 rounded-md">
                 <Search className="h-8 w-4 text-black" />
                 <input type="text" placeholder="Search..." className="outline-none max-w-[95px] dark:text-white dark:bg-[#1c1c1d] text-black" />
-                <div>
-                <button className="bg-primary dark:bg-[#11001f] text-white  max-w-[80px] p-3 rounded-md translate-x-3 mr-1">
-                    Search
-                  </button>
-                </div>
+                <div className="flex items-center gap-4">
+              <SearchBar /> {/* Integrated search bar */}
+              {/* User Avatar */}
+            </div>
               </div>
               {isLoaded && user ? (
               <Popover>

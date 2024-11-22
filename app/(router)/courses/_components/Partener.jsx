@@ -26,7 +26,7 @@ function Partner() {
   };
 
   return (
-    <div className="max-w-[1200px] translate-x-[2px] rounded-md bg-white py-10 p-5 mt-3 relative dark:bg-[#11001f]">
+    <div className=" mt-5 relative dark:bg-[#11001f]">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold">Nos Partenaires</h2>
       </div>

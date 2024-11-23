@@ -47,7 +47,7 @@ function Newsletter() {
   };
 
   return (
-    <div className="mt-[90px] p-5">
+    <div className="mt-[100px] p-5">
       <div className="md:flex md:gap-5">
         <div className="md:w-2/3 lg:w-3/4">
           <WelcomebannerNewsletter/>

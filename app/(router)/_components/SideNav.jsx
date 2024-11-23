@@ -94,7 +94,26 @@ function SideNav() {
     </p>
   </div>
 </div> */}
-      <nav className="w-full bg-primary dark:bg-[#11001f] shadow-md text-white fixed top-0 left-0 right-0 z-10">
+<div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-blue-600 px-4 py-3 text-white">
+  <p className="text-sm font-medium mr-2">
+    Available soon
+    <Link href="#" className="inline-block underline ml-2">Under development !</Link>
+  </p>
+
+  <button
+    aria-label="Dismiss"
+    className="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="size-5" viewBox="0 0 20 20" fill="currentColor">
+      <path
+        fillRule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+      <nav className="w-full bg-primary dark:bg-[#0B192C]  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">

@@ -16,7 +16,7 @@ function WelComeBannerNewsletter() {
           Rejoignez la NewsLetter maintenant
         </h1>
         <p className="mt-2 text-gray-500 dark:text-gray-200">
-          Recevez les dernières nouvelles, offres et cours avec la newsletter LansarCenter Academy directement dans votre boîte de réception
+          Recevez les dernières nouvelles, offres et cours avec la newsletter Ika'kalanso directement dans votre boîte de réception
         </p>
       </div>
     </div>

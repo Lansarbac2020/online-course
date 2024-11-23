@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import WelcomeBanner from './_components/WelcomeBanner';
+
+import HeroSection from './_components/HeroSection';
 import CourseList from './_components/CourseList';
 import SideBanner from './_components/SideBanner';
 import OurTeam from '../courses/_components/OurTeam';
@@ -10,6 +12,7 @@ import Testimonials from '../testimonial/page';
 import Trust from '../courses/_components/Trust';
 import Workflow from '../herosection/page';
 import { Loader2 } from 'lucide-react';
+
 
 function Courses() {
   const [loading, setLoading] = useState(true);
@@ -43,12 +46,13 @@ function Courses() {
             {/* Course List */}
             <CourseList />
 
-            {/* Team Section */}
+            {/* Team Section
             <OurTeam />
 
-            {/* Trust Section */}
-            <Trust />
-
+            {/* Trust Section 
+            <Trust /> */}
+            <HeroSection/>        
+    
             {/* Workflow Section */}
             <Workflow />
 

@@ -38,24 +38,24 @@ const page = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+      <section className="bg-gray-100 dark:bg-[#11001f] dark:border dark:border-white p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-primary dark:text-white mb-4">Contact Us</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
           If you have any questions or need assistance, feel free to reach out to us. We're here to help!
         </p>
         <div className="space-y-4">
           <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-            <span className="material-icons">email</span>
-            <a href="mailto:support@example.com" className="text-lg">
-              support@example.com
+            <span className="material-icons">Email :</span>
+            <a href="mailto:ikalanso.help@gmail.com" className="text-lg">
+            ikalanso.help@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-            <span className="material-icons">Phone</span>
-            <span className="text-lg">+1 (555) 123-4567</span>
+            <span className="material-icons">Phone :</span>
+            <span className="text-lg">+90 541-162-22-94</span>
           </div>
           <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-            <span className="material-icons">Location</span>
+            <span className="material-icons">Location :</span>
             <span className="text-lg">BAMAKO/MALI</span>
           </div>
         </div>

@@ -17,7 +17,7 @@ function SideBanner() {
     }
 
     return (
-        <div className=' bg-white dark:bg-[#11001f]'>
+        <div className=' bg-white dark:bg-gray-800'>
             {sideBanners && sideBanners.length > 0 ? (
                 sideBanners.map((item, index) => (
                     <div key={index}>

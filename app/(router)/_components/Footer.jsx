@@ -74,7 +74,7 @@ function Footer() {
             
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <p className='mt-4'>&copy; {new Date().getFullYear()} LansarCenter-Academy. All rights reserved</p>
+          <p className='mt-4'>&copy; {new Date().getFullYear()} IKA'Kalanso. All rights reserved</p>
         </div>
       </div>
     </footer>

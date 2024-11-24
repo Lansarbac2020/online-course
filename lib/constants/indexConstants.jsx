@@ -94,24 +94,24 @@ import { GlobeLock } from "lucide-react";
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
+    title: "Solutions d'Apprentissage Complètes",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Nous avons pour objectif de fournir un catalogue diversifié de cours couvrant un large éventail de secteurs, allant de la technologie et des affaires aux arts créatifs et bien plus encore. ",
   },
   {
-    title: "Review code without worry",
+    title: "Expérience d'Apprentissage Personnalisée",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Chaque personne apprend différemment. Notre plateforme utilise des algorithmes avancés pour adapter votre parcours d'apprentissage en fonction de vos préférences, de vos objectifs et de vos progrès.",
   },
   {
-    title: "AI Assistance to reduce time",
+    title: "Contenu de Haute Qualité et Formateurs Experts",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Nous collaborons avec des experts de l'industrie, des formateurs expérimentés et des leaders d'opinion pour garantir que le contenu proposé est de la plus haute qualité, à jour et aligné avec les applications réelles. ",
   },
   {
-    title: "Share work in minutes",
+    title: "Accès À Tout Moment, Partout",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "L'éducation ne devrait jamais être limitée par le temps ou la localisation. Notre plateforme est accessible de n'importe où dans le monde, et vous pouvez apprendre à votre propre rythme, que ce soit sur votre ordinateur, votre tablette ou votre téléphone mobile.",
   },
 ];
 

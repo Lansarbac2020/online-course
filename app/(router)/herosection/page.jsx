@@ -4,10 +4,10 @@ import { checklistItems } from '../../../lib/constants/indexConstants';
 const Workflow = () => {
   return (
     <div className="mt-[150px]">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
-        Accelerate your{" "}
-        <span className="bg-gradient-to-r from-blue-500 to-primary text-transparent bg-clip-text">
-          coding workflow.
+      <h2 className="mb-5 text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
+        Pourquoi nous{" "}
+        <span className=" mb-5 bg-gradient-to-r from-blue-500 to-primary text-transparent bg-clip-text">
+          Choisir ?
         </span>
       </h2>
       <div className="flex flex-wrap justify-center">

@@ -97,7 +97,7 @@ function SideNav() {
 <div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-blue-600 px-4 py-3 text-white">
   <p className="text-sm font-medium mr-2">
     Available soon
-    <Link href="#" className="inline-block underline ml-2">Under development !</Link>
+    <Link href="/information-page" className="inline-block underline ml-2">Under development !</Link>
   </p>
 
   <button
@@ -113,7 +113,7 @@ function SideNav() {
     </svg>
   </button>
 </div>
-      <nav className="w-full bg-primary dark:bg-[#0B192C]  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-primary dark:bg-gray-800  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">

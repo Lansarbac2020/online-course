@@ -11,7 +11,7 @@ const HeroSection = () => {
               avec des cours professionels
             </span>
           </h1> */}
-          <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
+          <p className="mt-10 text-lg text-center dark:text-white/70 text-neutral-500 max-w-4xl">
           Explorez, apprenez et créez vos propres projets. Ouvrez les portes de votre avenir grâce à une éducation de qualité
           </p>
           <div className="flex justify-center my-10">

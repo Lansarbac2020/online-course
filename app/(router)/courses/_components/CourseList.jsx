@@ -90,7 +90,7 @@ function CourseList() {
 
           {/* Filter Dropdown */}
           <Select onValueChange={handleFilterChange}>
-            <SelectTrigger className="w-full lg:w-[180px]">
+            <SelectTrigger className="w-full lg:w-[180px] dark:bg-gray-800">
               <SelectValue placeholder="Filter" />
             </SelectTrigger>
             <SelectContent>

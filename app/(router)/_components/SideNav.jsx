@@ -113,7 +113,7 @@ function SideNav() {
     </svg>
   </button>
 </div>
-      <nav className="w-full bg-primary dark:bg-gray-800  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-primary dark:bg-[rgb(5,7,20)]  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">

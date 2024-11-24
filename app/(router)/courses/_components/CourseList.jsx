@@ -74,7 +74,7 @@ function CourseList() {
   };
 
   return (
-    <div className="p-5 bg-white dark:bg-[#11001f] rounded-lg mt-3">
+    <div className="p-5 bg-white dark:bg-[rgb(5,7,20)] rounded-lg mt-3">
       {/* Search and Filter Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between mb-4">
         <h2 className="text-[20px] font-bold text-primary dark:text-white/90">All Courses</h2>

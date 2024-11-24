@@ -10,7 +10,7 @@ function Footer() {
   const { isDarkMode, toggleTheme } = useDarkMode();
 
   return (
-    <footer className="text-white bg-primary dark:bg-[#11001f] text-sm mt-16">
+    <footer className="text-white bg-primary dark:bg-[rgb(5,7,20)] text-sm mt-16">
       <div className="max-w-[1920px] mx-auto px-4 pt-16 pb-8 flex flex-col md:flex-row justify-between">
         {/* Footer content */}
         <FooterList className="p-5">

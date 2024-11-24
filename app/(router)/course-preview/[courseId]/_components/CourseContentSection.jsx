@@ -9,7 +9,7 @@ const checkisChapterCompleted=(chapterId)=>{
 }
 
   return (
-    <div className='p-3 bg-white  dark:bg-[#11001f] rounded-sm'>
+    <div className='p-3 bg-white  dark:bg-[rgb(5,7,20)] rounded-sm'>
         <h2>Contenus</h2>
         {courseInfo.chapter.map((item,index)=>(
             <div>

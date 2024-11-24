@@ -9,7 +9,7 @@ function CourseItem({ course }) {
       <div className="relative rounded-t-md h-[130px]">
         {/* Placeholder while the image is loading */}
         {!isImageLoaded && (
-          <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-t-md" />
+          <div className="absolute inset-0 bg-gray-200 dark:bg-[rgb(5,7,20)] animate-pulse rounded-t-md" />
         )}
 
         {/* Actual Image */}

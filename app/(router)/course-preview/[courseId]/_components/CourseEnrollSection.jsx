@@ -36,14 +36,14 @@ function CourseEnrollSection({courseInfo, isUserAlreadyEnrolled}) {
       })
     }
   return (
-    <div className='p-3 text-center rounded-sm bg-primary dark:bg-[#2a004a] flex flex-col gap-3 mt-[10px]'>
+    <div className='p-3 text-center rounded-sm bg-primary dark:bg-[rgb(5,7,20)] flex flex-col gap-3 mt-[10px] mb-3'>
 
         <h2 className='text-[22px] font-bold  text-white'>Engistrez au cours</h2>
         {/* User has membership  */}
         { user && (membership||courseInfo.free)&&!isUserAlreadyEnrolled? <div className='flex flex-col gap-3 mt-3'>
         <h2 className='text-white font-light'>Engistrez maintenant et decouvrir de nouvelle aventure</h2>
 
-        <Button className='bg-white dark:bg-[#11001f] text-primary hover:bg-white dark:hover:bg-[#11001f] hover:text-primary dark:hover:text-[#2a004a]'
+        <Button className='bg-white dark:bg-[rgb(5,7,20)] border dark:border-white/70 dark:text-white text-primary hover:bg-white dark:hover:bg-[#11001f] hover:text-primary dark:hover:text-[rgb(5,7,20)]'
         onClick={()=>onEnrollCourse()}
         >Enregistrez</Button>
         </div>

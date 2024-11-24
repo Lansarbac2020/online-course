@@ -4,7 +4,7 @@ import React from 'react';
 
 function WelcomeBanner() {
   return (
-    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-[#3C3D37] rounded-xl p-8 shadow-lg">
+    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-[rgb(5,7,20)] rounded-xl p-8 shadow-lg">
       <div className="flex-shrink-0">
         <Image 
           src="/bannerschool.png" 

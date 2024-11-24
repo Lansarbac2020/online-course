@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="mt-[100px] min-h-screen bg-white dark:bg-[#11001f] text-gray-900 dark:text-white">
+    <div className="mt-[100px] md:mt-[130px] min-h-screen bg-white dark:bg-[rgb(5,7,20)] text-gray-900 dark:text-white">
     <div className="container mx-auto p-8">
       {/* Heading Section */}
       <header className="text-center mb-12">
@@ -38,7 +38,7 @@ const page = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="bg-gray-100 dark:bg-[#11001f] dark:border dark:border-white p-6 rounded-lg shadow-lg">
+      <section className="bg-gray-100 dark:bg-[rgb(5,7,20)] dark:border dark:border-white p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-primary dark:text-white mb-4">Contact Us</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
           If you have any questions or need assistance, feel free to reach out to us. We're here to help!

@@ -3,7 +3,7 @@ import React from 'react';
 
 function WelcomeBannerDashboard({ user }) {
   return (
-    <div className='bg-green-100 dark:bg-[#11001f] rounded-xl p-5 flex flex-col md:flex-row gap-5 items-center'>
+    <div className='bg-green-100 dark:bg-[rgb(5,7,20)] rounded-xl p-5 flex flex-col md:flex-row gap-5 items-center'>
       <div className="md:w-48">
         <Image src={'/bannerschool.png'} alt='panda' width={150} height={150}  className='rounded-lg'/>
       </div>

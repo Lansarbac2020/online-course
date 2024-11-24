@@ -26,7 +26,7 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
       <h2 className='mt-5 text-lg font-semibold'>
         {watchMode ?
           <span className='flex justify-between items-center'>{courseInfo?.chapter[activeChapterIndex]?.name}
-            <Button className='text-[10px] w-full dark:text-white dark:bg-[#2a004a] border dark:border-white/45 ' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
+            <Button className='text-[10px] w-full dark:text-white dark:bg-[rgb(5,7,20)] border dark:border-white/45 ' onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
           </span>
           : <span>Description du cours</span>
         }
@@ -43,7 +43,7 @@ function CourseVideoDescription({ courseInfo, activeChapterIndex, watchMode = fa
         {courseInfo.author}
       </span>
      <div className='
-        bg-white dark:bg-[#11001f] mt-5 font-bold'>
+        bg-white dark:bg-[rgb(5,7,20)] mt-5 font-bold'>
           Course Materials: 
           <span className=' ml-2 text-sm text-slate-500 dark:text-slate-300 justify-eve'>Retrouver ci-dessous les materiels du cours</span>
           <div className='flex gap-3 justify-center

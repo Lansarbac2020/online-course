@@ -53,7 +53,7 @@ function ProgressCourseItem({ course }) {
             hover:scale-105
             dark:border
             dark:border-white
-            dark:bg-[#11001f]
+            dark:bg-[rgb(5,7,20)]
             justify-start text-white '>
                <span className='md:hidden'>View</span> <EyeIcon className='ml-3 text-white' />
             </Button>

@@ -170,11 +170,14 @@ const markChapterCompleted=async(enrollId, chapterId)=>{
   const query =gql`
   mutation MyMutation {
     updateUserEnrollCourse(
-      data: {completedCahpter: {create: {CompletedChapter: {data: {chapterId: "`+chapterId+`"}}}}}
+      data: {
+      isCompleted: true
+      completedCahpter: {create: {CompletedChapter: {data: {chapterId: "`+chapterId+`"}}}}}
       where: {id: "`+enrollId+`"}
     )
     {
       id
+      isCompleted
     }
     publishUserEnrollCourse(where: {id: "`+enrollId+`"}
     ) {
@@ -267,6 +270,38 @@ const SEARCH_COURSES = async (searchTerm) => {
     throw error;
   }
 };
+//get completedCoursesList
+const getCompletedCourses = async (email) => {
+  const query = gql`
+    query GetCompletedCourses {
+      userEnrollCourses(
+        where: { userEmail: "` + email + `", isCompleted: true }
+      ) {
+        id
+        courseId
+        courseList {
+          id
+          name
+          slug
+          author
+          banner {
+            url
+          }
+          description
+          totalChapters
+        }
+      }
+    }
+  `;
+  try {
+    const result = await request(MASTER_URL, query);
+    return result;
+  } catch (error) {
+    console.error("Error fetching completed courses:", error.response || error);
+    throw error;
+  }
+};
+
 
 // Example Usage
 SEARCH_COURSES("React")
@@ -286,6 +321,7 @@ export default{
     getUserAllEnrolledCourseList,
     AddNewMember,
     SEARCH_COURSES,
+    getCompletedCourses
     
 
 }

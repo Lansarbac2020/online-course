@@ -80,7 +80,7 @@ function SideNav() {
     setTimeout(() => {
       setIsLoading(false); // Désactiver après une action simulée
       window.location.href = url; // Naviguer vers l'URL
-    }, 1000); // Vous pouvez ajuster ce délai
+    },); // Vous pouvez ajuster ce délai
   }
   
   return (
@@ -160,13 +160,13 @@ function SideNav() {
         <li
           key={item.id}
           className={clsx(
-            'py-1 px-4 transition-all ease-in-out duration-200 cursor-pointer font-bold uppercase hover:text-slate-300 hover:scale-105',
+            'py-1 px-4 cursor-pointer font-bold uppercase hover:text-slate-300 ',
             path === item.path ? 'dark:border-white border-b-2 text-white' : 'text-white'
           )}
           onClick={() => handleLinkClick(item.path)}
         >
           {isLoading && activeMenu === item.path ? (
-            <span className="spinner border-white"></span> // Ajoutez un spinner
+            <span className=" border-white"></span> // Ajoutez un spinner
           ) : (
             item.name
           )}
@@ -237,7 +237,7 @@ function SideNav() {
                 item.auth && (
                   <Link href={item.path} key={item.id}>
                     <li
-                      className={`py-2 px-4 bg-primary dark:bg-[#11001f] transition-all ease-in-out duration-200 cursor-pointer hover:text-slate-400  ${
+                      className={`py-2 px-4 bg-primary dark:bg-[#11001f] duration-200 cursor-pointer hover:text-slate-400  ${
                         path === item.path ? 'bg-slate-100 dark:bg-[#11001f] dark:border-b dark:border-b-white dark:text-white text-black' : 'text-white'
                       }`}
                       onClick={() => {

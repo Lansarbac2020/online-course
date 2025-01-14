@@ -128,10 +128,10 @@ function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
-      <div className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg shadow">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-800 flex items-center justify-center gap-2">
-            <Award className="h-8 w-8 text-blue-600" />
+      <div className="mb-8 mt-1 md:mt-10 bg-gradient-to-r from-blue-50 to-primary p-6 rounded-lg shadow">
+        <div className="text-center ">
+          <h1 className="text-3xl font-bold text-primary flex items-center justify-center gap-2">
+            <Award className="h-8 w-8 text-primary" />
             My Certificates
           </h1>
         </div>
@@ -149,7 +149,7 @@ function Home() {
             <div 
               key={index}
               className={`bg-white rounded-lg shadow transition-all duration-200 hover:shadow-lg ${
-                selectedCourse === course ? 'ring-2 ring-blue-500' : ''
+                selectedCourse === course ? 'ring-2 ring-primary' : ''
               }`}
             >
               <div className="p-6">
@@ -175,7 +175,7 @@ function Home() {
                     {selectedCourse === course && (
                       <button 
                         onClick={() => downloadCertificateAsPDF(course.courseList.name)}
-                        className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                        className="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-900 transition-colors duration-200 flex items-center justify-center gap-2"
                       >
                         <Download className="h-4 w-4" />
                         Download Certificate

@@ -60,7 +60,9 @@ function Courses() {
             <Partener />
 
             {/* Testimonials Section */}
-        
+            //<Testimonials />
+            {/* our teams */}
+            <OurTeam />
           </div>
 
           {/* Right Container */}

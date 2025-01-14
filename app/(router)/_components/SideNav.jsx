@@ -23,6 +23,8 @@ function SideNav() {
   const path = usePathname();
   const [activeMenu, setActiveMenu] = useState(null); // State to track active menu item
   const [isLoading, setIsLoading] = useState(false);
+  //for closing the banner div
+  const [isVisible, setIsVisible] = useState(true);
 
  
 
@@ -83,6 +85,9 @@ function SideNav() {
     },); // Vous pouvez ajuster ce délai
   }
   
+  const handleCloseBanner=()=>{
+    setIsVisible(false);
+  }
   return (
     <div>
       {/* Announcement  */}
@@ -94,25 +99,38 @@ function SideNav() {
     </p>
   </div>
 </div> */}
-<div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-blue-600 px-4 py-3 text-white">
-  <p className="text-sm font-medium mr-2">
-    Available soon
-    <Link href="/information-page" className="inline-block underline ml-2">Under development !</Link>
-  </p>
 
-  <button
-    aria-label="Dismiss"
-    className="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" className="size-5" viewBox="0 0 20 20" fill="currentColor">
-      <path
-        fillRule="evenodd"
-        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-        clipRule="evenodd"
-      />
-    </svg>
-  </button>
-</div>
+
+{isVisible && (
+  <div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-blue-600 px-4 py-3 text-white">
+    <p className="text-sm font-medium mr-2">
+      Available soon
+      <Link href="/information-page" className="inline-block underline ml-2">
+        Under development!
+      </Link>
+    </p>
+    <button
+      id="banner"
+      onClick={handleCloseBanner}
+      aria-label="Dismiss"
+      className="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="size-5"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+)}
+
       <nav className="w-full bg-primary dark:bg-[rgb(5,7,20)]  dark:border dark:border-y-white shadow-md text-white fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
@@ -237,7 +255,9 @@ function SideNav() {
                 item.auth && (
                   <Link href={item.path} key={item.id}>
                     <li
-                      className={`py-2 px-4 bg-primary dark:bg-[#11001f] duration-200 cursor-pointer hover:text-slate-400  ${
+                      className={`py-2 px-4 bg-primary dark:bg-[#11001f] 
+                        
+                        mr-5 duration-200 cursor-pointer hover:text-slate-400  ${
                         path === item.path ? 'bg-slate-100 dark:bg-[#11001f] dark:border-b dark:border-b-white dark:text-white text-black' : 'text-white'
                       }`}
                       onClick={() => {
@@ -252,8 +272,8 @@ function SideNav() {
                 )
             )}
           </ul>
-          <div className=" mt-9 grid gap-4">
-             <div className="flex  max-w-[250px] bg-white  dark:bg-[#11001f] gap-1 border p-2 rounded-md">
+          <div className=" mt-9 grid gap-4 ">
+             <div className="flex  max-w-[250px] bg-white  dark:bg-[#11001f] gap-1 border p-2 rounded-md ">
                 <Search className="h-8 w-4 text-black" />
                 <input type="text" placeholder="Search..." className="outline-none max-w-[95px] dark:text-white dark:bg-[#1c1c1d] text-black" />
                 <div className="flex items-center gap-4">
@@ -261,22 +281,7 @@ function SideNav() {
               {/* User Avatar */}
             </div>
               </div>
-              {isLoaded && user ? (
-              <Popover>
-              <PopoverTrigger> <Image src={user?.imageUrl} height={35} width={35} alt='profile image' className='rounded-full'/></PopoverTrigger>
-              <PopoverContent className='w-44'>
-               <ul className='flex flex-col gap-2'>
-              
-              <Link href='/certificate' className='cursor-pointer hover:text-primary dark:hover:text-slate-500'>My Certificates</Link>
-              <div href='/' className='cursor-pointer hover:text-primary dark:hover:text-slate-500'><SignOutButton afterSignOutUrl='/courses'/></div>
-              {/* <div href='/' className='cursor-pointer hover:text-primary'> <UserButton afterSignOutUrl='/courses'/> </div> */}
-               </ul></PopoverContent>
-              </Popover>
-              ) : (
-                <Link href="/sign-in">
-                  <div className=" translate-x-5 mt-7 border p-2 max-w-[180px] hover:scale-105  dark:border-white/60   text-center rounded-md bg-blue-700 dark:bg-[#2a004a]">Get Started</div>
-                </Link>
-              )}
+             
             </div>
         </div>
       </div>

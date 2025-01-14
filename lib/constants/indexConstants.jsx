@@ -116,6 +116,8 @@ export const checklistItems = [
 ];
 
 // export const pricingOptions = [
+
+
 //   {
 //     title: "Free",
 //     price: "$0",
@@ -171,3 +173,52 @@ export const checklistItems = [
 //   { href: "#", text: "Hackathons" },
 //   { href: "#", text: "Jobs" },
 // ];
+//teams members
+const teamMembers = [
+  {
+    name: "Bacoro Lansar",
+    role: "CEO & Founder",
+    image: "/lansar.jpg",
+    bio: "3+ years of experience in EdTech. Passionate about making education accessible to everyone.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  },
+  {
+    name: "Michael Chen",
+    role: "Lead Developer",
+    image: "mikejohnson.jpg",
+    bio: "Full-stack developer with expertise in React and Node.js. Loves building scalable solutions.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  },
+  {
+    name: "Emma Williams",
+    role: "Content Director",
+    image: "/lansar.jpg",
+    bio: "Educational content specialist with a background in curriculum development.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  },
+  {
+    name: "David Rodriguez",
+    role: "UX Designer",
+    image: "/api/placeholder/400/400",
+    bio: "Creative designer focused on creating intuitive and engaging learning experiences.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  }
+];
+
+export default teamMembers;

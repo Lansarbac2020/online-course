@@ -1,25 +1,6 @@
 import React from 'react';
+import {testimonials} from '../../../lib/constants/indexConstants'
 
-const testimonials = [
-  {
-    name: 'John Doe',
-    occupation: 'Développeur Web',
-    message: 'This platform has completely changed my life. The resources and support are amazing!',
-    image: 'https://randomuser.me/api/portraits/men/1.jpg'
-  },
-  {
-    name: 'Jane Smith',
-    occupation: 'Designer UX/UI',
-    message: 'I have learned so much and feel more confident in my skills. Highly recommend to everyone!',
-    image: 'https://randomuser.me/api/portraits/women/1.jpg'
-  },
-  {
-    name: 'Sam Wilson',
-    occupation: 'Chef de projet',
-    message: 'The community here is incredibly supportive and the content is top-notch.',
-    image: 'https://randomuser.me/api/portraits/men/2.jpg'
-  }
-];
 
 const  Testimonials = () => {
   return (

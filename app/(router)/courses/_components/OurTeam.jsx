@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
-import teamMembers from '../../../../lib/constants/indexConstants'
+import {teamMembers} from '../../../../lib/constants/indexConstants'
 
 const OurTeam = () => {
   return (
@@ -21,7 +21,7 @@ const OurTeam = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group bg-white dark:bg-[rgb(5,7,20)]  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               {/* Image Container */}
               <div className="relative overflow-hidden">
@@ -38,7 +38,7 @@ const OurTeam = () => {
                   <a href={member.social.twitter} className="text-white hover:text-blue-400 transition-colors">
                     <Twitter className="h-6 w-6" />
                   </a>
-                  <a href={member.social.github} className="text-white hover:text-blue-400 transition-colors">
+                  <a href={member.social.github} className="text-white hover:text-black transition-colors">
                     <Github className="h-6 w-6" />
                   </a>
                 </div>
@@ -46,13 +46,13 @@ const OurTeam = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                <h3 className="text-xl font-semibold dark:text-white text-gray-900 mb-1">
                   {member.name}
                 </h3>
                 <p className="text-blue-600 font-medium mb-3">
                   {member.role}
                 </p>
-                <p className="text-gray-600 text-sm">
+                <p className=" dark:text-white text-gray-600 text-sm">
                   {member.bio}
                 </p>
               </div>

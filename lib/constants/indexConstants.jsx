@@ -1,9 +1,4 @@
-import { BotMessageSquare } from "lucide-react";
-import { BatteryCharging } from "lucide-react";
-import { Fingerprint } from "lucide-react";
-import { ShieldHalf } from "lucide-react";
-import { PlugZap } from "lucide-react";
-import { GlobeLock } from "lucide-react";
+
 
 
 
@@ -174,7 +169,7 @@ export const checklistItems = [
 //   { href: "#", text: "Jobs" },
 // ];
 //teams members
-const teamMembers = [
+export const teamMembers = [
   {
     name: "Bacoro Lansar",
     role: "CEO & Founder",
@@ -220,5 +215,27 @@ const teamMembers = [
     }
   }
 ];
+//testimonials
+export const testimonials = [
+  {
+    name: 'John Doe',
+    occupation: 'Développeur Web',
+    message: 'This platform has completely changed my life. The resources and support are amazing!',
+    image: 'https://randomuser.me/api/portraits/men/1.jpg'
+  },
+  {
+    name: 'Jane Smith',
+    occupation: 'Designer UX/UI',
+    message: 'I have learned so much and feel more confident in my skills. Highly recommend to everyone!',
+    image: 'https://randomuser.me/api/portraits/women/1.jpg'
+  },
+  {
+    name: 'Sam Wilson',
+    occupation: 'Chef de projet',
+    message: 'The community here is incredibly supportive and the content is top-notch.',
+    image: 'https://randomuser.me/api/portraits/men/2.jpg'
+  }
+];
 
-export default teamMembers;
+
+

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import useDarkMode from '../../hooks/useDarkMode';
 import { 
   Moon, 
   Sun, 
@@ -20,9 +21,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import GoogleTranslate from '../_components/GoogleTranslate';
 
 const AccountSettings = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  //const [isDarkMode, setIsDarkMode]=
+  const [isDark, setIsDarkMode] = useState(true);
+  const { isDarkMode, toggleTheme } = useDarkMode();
   const [selectedLanguage, setSelectedLanguage] = useState('fr');
   const [notifications, setNotifications] = useState({
     email: true,
@@ -44,7 +48,7 @@ const AccountSettings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen  ">
       <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
@@ -59,18 +63,18 @@ const AccountSettings = () => {
         {/* Settings Grid */}
         <div className="grid gap-8">
           {/* Appearance Section */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow">
+          <section className="bg-white dark:bg-gray-800 border  border-black dark:border-white rounded-lg shadow">
             <div className="p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                 <Sun className="w-5 h-5" />
                 Apparence
               </h2>
 
-              <div className="mt-6 space-y-6">
+              <div className="mt-6 space-y-6 ">
                 {/* Dark Mode Toggle */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    {isDarkMode ? 
+                    {isDark ? 
                       <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : 
                       <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                     }
@@ -84,7 +88,8 @@ const AccountSettings = () => {
                     </div>
                   </div>
                   <Switch
-                    checked={isDarkMode}
+                    checked={isDark}
+                    onClick={toggleTheme}
                     onCheckedChange={setIsDarkMode}
                     className="data-[state=checked]:bg-blue-600"
                   />
@@ -94,7 +99,7 @@ const AccountSettings = () => {
           </section>
 
           {/* Language Section */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow">
+          <section className="bg-white dark:bg-gray-800 rounded-lg shadow border  border-black dark:border-white">
             <div className="p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                 <Globe className="w-5 h-5" />
@@ -111,28 +116,14 @@ const AccountSettings = () => {
                       Sélectionnez votre langue préférée
                     </p>
                   </div>
-                  <Select
-                    value={selectedLanguage}
-                    onValueChange={setSelectedLanguage}
-                  >
-                    <SelectTrigger className="w-40">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {languages.map((lang) => (
-                        <SelectItem key={lang.code} value={lang.code}>
-                          {lang.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <GoogleTranslate/>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Notifications Section */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow">
+          <section className="bg-white dark:bg-gray-800 border  border-black dark:border-white rounded-lg shadow">
             <div className="p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                 <Bell className="w-5 h-5" />
@@ -174,9 +165,11 @@ const AccountSettings = () => {
           </section>
 
           {/* Quick Links */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow">
+          <section className="bg-white dark:bg-gray-800 rounded-lg shadow  border  border-black dark:border-white">
             <div className="p-6">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-xl font-semibold 
+             
+              text-gray-900 dark:text-white mb-6">
                 Accès rapides
               </h2>
               

@@ -148,7 +148,7 @@ function SideNav() {
                           My Certificates
                         </Link>
                         <Link 
-                          href="/certificate"
+                          href="/settings"
                           className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
                         >
                           Settings
@@ -218,7 +218,7 @@ function SideNav() {
                           My Certificates
                         </Link>
                         <Link 
-                          href="/certificate"
+                          href="/settings"
                           className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
                         >
                           Settings

@@ -8,6 +8,8 @@ import OurTeam from './courses/_components/OurTeam'
 import Partener from './courses/_components/Partener'
 import ScrollToTop from '../(router)/_components/ScrollToTop'
 
+import GoogleTranslate from '../(router)/_components/GoogleTranslate'
+
 
 function layout({children}) {
   return (
@@ -20,6 +22,7 @@ function layout({children}) {
         <div className='md:m-16'>
             {/* <Header/> */}
         {children}
+        
         
         </div>
         

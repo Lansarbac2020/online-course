@@ -147,6 +147,12 @@ function SideNav() {
                         >
                           My Certificates
                         </Link>
+                        <Link 
+                          href="/certificate"
+                          className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                        >
+                          Settings
+                        </Link>
                         <div className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800">
                           <SignOutButton />
                         </div>
@@ -210,6 +216,12 @@ function SideNav() {
                           className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
                         >
                           My Certificates
+                        </Link>
+                        <Link 
+                          href="/certificate"
+                          className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                        >
+                          Settings
                         </Link>
                         <div className="rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800">
                           <SignOutButton />

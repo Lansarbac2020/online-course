@@ -5,10 +5,10 @@ import WelcomeBanner from './_components/WelcomeBanner';
 
 import HeroSection from './_components/HeroSection';
 import CourseList from './_components/CourseList';
-import SideBanner from './_components/SideBanner';
+
 import OurTeam from '../courses/_components/OurTeam';
 import Partener from '../courses/_components/Partener';
-import Testimonials from '../testimonial/page';
+import Testimonials from '../courses/_components/Testimonials';
 import Trust from '../courses/_components/Trust';
 import Workflow from '../herosection/page';
 import { Loader2 } from 'lucide-react';
@@ -60,7 +60,7 @@ function Courses() {
             <Partener />
 
             {/* Testimonials Section */}
-            //<Testimonials />
+           <Testimonials/>
             {/* our teams */}
             <OurTeam />
           </div>

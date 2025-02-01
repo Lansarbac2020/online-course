@@ -2,7 +2,15 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 function CourseItem({ course }) {
-  const [isImageLoaded, setIsImageLoaded] = useState(true); // Track image loading
+  const defaultBanner = '/bannerschool.png';
+  // Check for banner url; if not found, use defaultBanner.
+  const bannerUrl = course?.banner?.url || defaultBanner;
+  
+  // Log course for debugging
+  console.log('Course item data:', course);
+
+  // Track whether the image has finished loading
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div className="border rounded-md hover:shadow-md dark:border-white/30 hover:scale-105 transform transition duration-300 hover:shadow-blue-300 dark:hover:shadow-white cursor-pointer">
@@ -14,14 +22,18 @@ function CourseItem({ course }) {
 
         {/* Actual Image */}
         <Image
-          src={course?.banner?.url} // Fallback image if the URL is missing
+          src={bannerUrl}
           width={500}
           height={150}
           alt="banner"
           className={`rounded-t-md h-[130px] object-cover transition-opacity duration-300 ${
             isImageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
-          onLoadingComplete={() => setIsImageLoaded(true)} // Trigger when image loads
+          onLoadingComplete={() => setIsImageLoaded(true)}
+          onError={() => {
+            //console.error("Error loading image for course:", course.name);
+            setIsImageLoaded(true);
+          }}
         />
       </div>
 

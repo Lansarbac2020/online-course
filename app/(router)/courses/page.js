@@ -9,18 +9,19 @@ import CourseList from './_components/CourseList';
 import OurTeam from '../courses/_components/OurTeam';
 import Partener from '../courses/_components/Partener';
 import Testimonials from '../courses/_components/Testimonials';
-import Trust from '../courses/_components/Trust';
+
 import Workflow from '../herosection/page';
 import { Loader2 } from 'lucide-react';
+
 
 
 function Courses() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay (e.g., for data fetching or setup)
+   
     const timer = setTimeout(() => {
-      setLoading(false); // Stop loading after 2 seconds
+      setLoading(false);
     }, 2000);
 
     // Cleanup the timer on component unmount

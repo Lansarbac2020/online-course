@@ -70,7 +70,7 @@ function SideNav() {
       {/* Announcement Banner */}
       {isVisible && (
         <div className="fixed inset-x-0 bottom-0 z-50">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3">
+          <div className="bg-gradient-to-r bg-primary px-4 py-3">
             <div className="mx-auto max-w-7xl flex items-center justify-between">
               <p className="text-sm font-medium text-white">
                 Available soon
@@ -90,7 +90,7 @@ function SideNav() {
       )}
 
       {/* Navigation Bar */}
-      <nav className="fixed inset-x-0 top-0 z-40 bg-gradient-to-r from-primary to-primary-dark dark:from-[rgb(5,7,20)] dark:to-[rgb(15,17,30)] border-b border-white/10">
+      <nav className="fixed inset-x-0 top-0 z-40 bg-primary dark:bg-[rgb(5,7,20)] border-b border-white/10">
         <div className=" max-w-7xl  px-4 sm:px-6 lg:px-8 text-center justify-between">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
@@ -163,13 +163,16 @@ function SideNav() {
                   <Link href="/sign-in">
                     <button
                       onClick={() => handleLinkClick('/sign-in')}
-                      className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-500 
+                      dark:bg-[rgb(8,11,27)]
+                      dark:border
+                      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                       disabled={isLoading}
                     >
                       {isLoading ? (
                         <Loader2 className="h-5 w-5 animate-spin" />
                       ) : (
-                        'Get Started'
+                        'Sign-Up'
                       )}
                     </button>
                   </Link>

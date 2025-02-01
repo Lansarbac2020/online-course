@@ -11,24 +11,41 @@ import CourseItem from './CourseItem';
 import Link from 'next/link';
 
 function CourseList() {
+
+  const [allCourses, setAllCourses] = useState([]);
   const [courses, setCourseList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all'); // Track the selected filter
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     getAllCourses();
   }, []);
 
+ 
+  const applyFilter = (courseList, filterValue) => {
+    if (filterValue === 'all') {
+      return courseList;
+    } else {
+     
+      const isFree = filterValue === 'free';
+      return courseList.filter((course) => course.free === isFree);
+    }
+  };
+
   // Fetch Course List
   const getAllCourses = () => {
     GlobalApi.getAllCourseList()
       .then((resp) => {
-        console.log(resp);
-        setCourseList(resp?.courses || []); // Ensure courses are set correctly
+        const fetchedCourses = resp?.courses || [];
+        
+        setAllCourses(fetchedCourses);
+       
+        setCourseList(applyFilter(fetchedCourses, filter));
       })
       .catch((error) => {
         console.error('Error fetching all courses:', error);
-        setCourseList([]); // Set empty array in case of an error
+        setAllCourses([]);
+        setCourseList([]);
       });
   };
 
@@ -36,17 +53,21 @@ function CourseList() {
   const searchCourses = (term) => {
     const sanitizedTerm = term.trim();
     if (sanitizedTerm === '') {
+  
       getAllCourses();
       return;
     }
 
     GlobalApi.SEARCH_COURSES(sanitizedTerm)
       .then((resp) => {
-        console.log(resp);
-        setCourseList(resp?.courses || []);
+        const fetchedCourses = resp?.courses || [];
+        
+        setAllCourses(fetchedCourses);
+        setCourseList(applyFilter(fetchedCourses, filter));
       })
       .catch((error) => {
         console.error('Error searching for courses:', error);
+        setAllCourses([]);
         setCourseList([]);
       });
   };
@@ -55,29 +76,23 @@ function CourseList() {
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    searchCourses(value); // Call search logic
+    searchCourses(value);
   };
 
   // Handle filter change
   const handleFilterChange = (value) => {
     setFilter(value);
-
-    // Apply filter logic
-    if (value === 'all') {
-      getAllCourses();
-    } else {
-      const isFree = value === 'free';
-      const filteredCourses = courses.filter((course) => course.free === isFree);
-      console.log("filteredCourses", filteredCourses)
-      setCourseList(filteredCourses);
-    }
+    
+    setCourseList(applyFilter(allCourses, value));
   };
 
   return (
     <div className="p-5 bg-white dark:bg-[rgb(5,7,20)] rounded-lg mt-3">
       {/* Search and Filter Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between mb-4">
-        <h2 className="text-[20px] font-bold text-primary dark:text-white/90">All Courses</h2>
+        <h2 className="text-[20px] font-bold text-primary dark:text-white/90">
+          All Courses
+        </h2>
         <div className="flex items-center gap-4">
           {/* Search Bar */}
           <input

@@ -256,6 +256,9 @@ const SEARCH_COURSES = async (searchTerm) => {
     name
     author
     description
+    banner {
+        url
+    }
   }
 }
   `;

@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import WelcomeBanner from './_components/WelcomeBanner';
-
 import HeroSection from './_components/HeroSection';
+
 import CourseList from './_components/CourseList';
+import {TypewriterEffectDemo} from '../../../components/TextEffect.jsx';
 
 import OurTeam from '../courses/_components/OurTeam';
 import Partener from '../courses/_components/Partener';
@@ -52,7 +53,8 @@ function Courses() {
 
             {/* Trust Section 
             <Trust /> */}
-            <HeroSection/>        
+            <TypewriterEffectDemo/>
+            {/* <HeroSection/>         */}
     
             {/* Workflow Section */}
             <Workflow />

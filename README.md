@@ -30,7 +30,7 @@ or others
 - **Deployment**: [![Vercel](https://img.shields.io/badge/-Vercel-05122A?style=flat&logo=Vercel)](https://vercel.com/)
 
 ## usage
-Access the platform via the provided URL (default: [https://lansarcenter-academy.vercel.app](https://ikakalanso-mali.vercel.app/)).
+Access the platform via the provided URL (default: [https://ikakalanso-mali.vercel.app](https://ikakalanso-mali.vercel.app)).
 
 ## Contributing
 Contributions are welcome! As this project is in development, I'm open to contributions aimed at implementing new features such as online payment integration, the store feature, and the instructor section. If you'd like to contribute, please follow these steps:
